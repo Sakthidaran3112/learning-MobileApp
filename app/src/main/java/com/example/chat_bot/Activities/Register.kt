@@ -51,6 +51,7 @@ class Register : AppCompatActivity() {
     var user_grade: String = ""
     var m_androidId: String ?= null
     private lateinit var language: String
+    private lateinit var alreadyUserbtn: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -204,7 +205,7 @@ class Register : AppCompatActivity() {
 
       //  setlang()
 
-
+        alreadyUserLogin()
 
 
     }
@@ -726,6 +727,8 @@ class Register : AppCompatActivity() {
                 }
             }
         }
+
+
 //        Toast.makeText(
 //            this.requireContext(),
 //            "Connection not available",
@@ -734,5 +737,12 @@ class Register : AppCompatActivity() {
         return false
     }
 
+    fun alreadyUserLogin(){
 
+        alreadyUserbtn = findViewById<TextView>(R.id.Already_user_login_btn)
+
+        alreadyUserbtn.setOnClickListener {
+            startActivity(Intent(this, Login::class.java))
+        }
+    }
 }

@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.provider.Settings.Secure
 import android.provider.Settings.Secure.ANDROID_ID
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -59,6 +61,14 @@ class Login : AppCompatActivity() {
         viewModel = ViewModelProvider(this, SEEDSViewModelFact(SEEDSRepository(retrofitService)))
             .get(SEEDSViewModel::class.java)
 
+
+
+        binding.backgroundImage?.setOnClickListener{
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
 
         binding.btnLogin.setOnClickListener{
             if (isOnline(this))
@@ -190,6 +200,11 @@ class Login : AppCompatActivity() {
     private fun dologin() {
         user_name = binding.usernameEt.text.toString().trim()
 
+        binding.usernameEt.setOnFocusChangeListener{view,hasFocus ->
+            if (!hasFocus){
+
+            }
+        }
 
 
         setlanguage()
