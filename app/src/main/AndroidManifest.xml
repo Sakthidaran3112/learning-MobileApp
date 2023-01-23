@@ -84,7 +84,7 @@
         <activity
             android:name=".Activities.Register"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:noHistory="true"/>
+            android:noHistory="true" />
         <activity
             android:name=".Activities.Splash"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
