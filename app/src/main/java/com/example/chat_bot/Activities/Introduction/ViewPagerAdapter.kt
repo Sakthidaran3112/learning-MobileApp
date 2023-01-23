@@ -12,10 +12,10 @@ import com.example.chat_bot.R
 
 class ViewPagerAdapter(var context: Context) : PagerAdapter() {
     var images = intArrayOf(
-        R.drawable.image1,
-        R.drawable.image2,
-        R.drawable.image3,
-        R.drawable.image4
+        R.drawable.app_logo,
+        R.drawable.chatbot,
+        R.drawable.quiz,
+        R.drawable.exercise
     )
     var headings = intArrayOf(
         R.string.heading_one,
