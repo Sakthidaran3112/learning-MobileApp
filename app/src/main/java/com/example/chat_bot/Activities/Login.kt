@@ -139,64 +139,6 @@ class Login : AppCompatActivity() {
     }
 
 
-//    private fun dologin() {
-//        user_name = binding.usernameEt.text.toString().trim()
-//
-//
-//
-//        val user = User(user_name, "",  "germany", "", "", "" )
-//
-//        if (isOnline(this))
-//        {
-//            if (user_name != "") {
-//                viewModel.userList.observe(this, Observer {  response->
-//
-//                    Log.d("loginn", response.token)
-//                    Log.d("loginn", response.auth.toString())
-//
-//
-//
-////                    if (response.code()== 404)
-////                    {
-////                        Toast.makeText(this, "Account not found!!", Toast.LENGTH_SHORT).show()
-////                    }
-////                    else if (response.code() == 200)
-////                    {
-//                        session.createLoginSession(user_name, m_androidId.toString())
-//                        //  session.save_details(user_age, user_grade)
-//                        val intent = Intent(this, HomeActivity::class.java)
-//                            .setAction(Intent.ACTION_VIEW)
-//                            .setData(Uri.parse("success"))
-//                        startActivity(intent)
-//                        finish()
-//
-//                       // Log.d("user", response.code().toString())
-//
-//                   // }
-//
-////                    else
-////                        Log.d("user", response.body().toString())
-//                    // Toast.makeText(this, response.body().toString(), Toast.LENGTH_SHORT).show()
-//                })
-//                viewModel.login_user(user)
-//
-//                viewModel.errorMessage.observe(this) { response ->
-//
-//                    Log.d("userr", response.toString())
-//                }
-//            }
-//            else
-//            {
-//                Toast.makeText(this, "please enter username", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//        else
-//        {
-//            Toast.makeText(this, "please check your internet connection", Toast.LENGTH_SHORT).show()
-//        }
-//        viewModel.login_user(user)
-//    }
-
     private fun dologin() {
         user_name = binding.usernameEt.text.toString().trim()
 

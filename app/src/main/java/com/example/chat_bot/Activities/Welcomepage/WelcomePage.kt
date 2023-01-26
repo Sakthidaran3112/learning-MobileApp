@@ -1,27 +1,40 @@
 package com.example.chat_bot.Activities.Welcomepage
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.setContentView
 import com.example.chat_bot.Activities.IntroductionActivity
 import com.example.chat_bot.Activities.Login
 import com.example.chat_bot.R
+import com.example.chat_bot.databinding.ActivityWelcomepageBinding
+import com.example.chat_bot.utils.SessionManager
+import com.yariksoffice.lingver.Lingver
 
 class WelcomePage : AppCompatActivity() {
+    private lateinit var binding: ActivityWelcomepageBinding
     private lateinit var alreadyRegisteredUserButton: Button
     private lateinit var getStartedButton: Button
     private lateinit var infoTextView: TextView
+    lateinit var session: SessionManager
+    private lateinit var user_language: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcomepage)
+        binding = setContentView(this, R.layout.activity_welcomepage)
         supportActionBar?.hide()
 
         setupViews()
+
+        user_language = ""
+
+
     }
+
 
     private fun setupViews() {
         setupAlreadyRegisteredUserButton()
@@ -52,4 +65,82 @@ class WelcomePage : AppCompatActivity() {
             startActivity(Intent(this, Seedsinfo::class.java))
         }
     }
+
+    private fun setlang() {
+        // access the items of the list
+        val languages = resources.getStringArray(R.array.Languages)
+
+        // access the language spinner
+        val lang_spinner = binding.langButton
+        if (lang_spinner != null) {
+            val adapter = ArrayAdapter(
+                this,
+                R.layout.lang_spinner, languages
+            )
+            lang_spinner.setAdapter(adapter)
+
+                AdapterView.OnItemClickListener { parent, view, position, id ->
+
+                    user_language = languages[position]
+
+                    lang(languages[position], adapter)
+
+
+                }
+        }
+    }
+
+    private fun lang(lang: String, adapter: ArrayAdapter<String>) {
+
+
+        when (lang) {
+            "German" -> {
+
+                Lingver.getInstance().setLocale(this, "de")
+                recreate()
+                adapter.notifyDataSetChanged()
+
+
+            }
+            "Spanish" -> {
+
+                Lingver.getInstance().setLocale(this, "es")
+                recreate()
+                adapter.notifyDataSetChanged()
+
+            }
+            "English" -> {
+
+                Lingver.getInstance().setLocale(this, "en")
+                val eng = Lingver.getInstance().getLanguage()
+                session.savelanguagePref(eng)
+                recreate()
+                adapter.notifyDataSetChanged()
+
+            }
+            "Greek" -> {
+
+                Lingver.getInstance().setLocale(this, "el")
+                val eng = Lingver.getInstance().getLanguage()
+                session.savelanguagePref(eng)
+                recreate()
+                adapter.notifyDataSetChanged()
+
+
+            }
+            else -> session.savelanguagePref(Lingver.getInstance().getLanguage()).toString()
+        }
+        adapter.notifyDataSetChanged()
+
+    }
+    override fun onResume() {
+        super.onResume()
+        setlang()
+    }
+
 }
+
+
+
+
+
