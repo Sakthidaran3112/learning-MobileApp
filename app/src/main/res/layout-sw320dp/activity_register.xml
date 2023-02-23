@@ -85,22 +85,27 @@
             android:textColor="@color/white"/>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="50dp"
             app:endIconMode="clear_text"
+            app:boxStrokeColor="@android:color/darker_gray"
             app:startIconDrawable="@drawable/ic_person"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:textColorHint="@color/white">
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/background"
+            app:startIconTint="@color/black"
+            android:alpha="0.7">
 
             <EditText
                 android:id="@+id/username_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@color/editTextHint"
+                android:background="@color/background"
                 android:hint="@string/username_register"
-                android:inputType="text">
+                android:inputType="text"
+                android:textColor="@color/black">
 
             </EditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -112,15 +117,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="@string/age_drop_down_text"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:boxBackgroundColor="@color/background"
             app:startIconDrawable="@drawable/ic_badge"
-            android:textColorHint="@color/white"
-            android:background="@color/editTextHint">
+            app:startIconTint="@color/black"
+            android:alpha="0.7">
 
             <AutoCompleteTextView
                 android:id="@+id/age_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                android:inputType="none"
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -129,16 +138,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-            app:startIconDrawable="@drawable/ic_grade"
-        android:textColorHint="@color/white"
+        app:startIconDrawable="@drawable/ic_grade"
+        app:startIconTint="@color/black"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@android:color/darker_gray"
+        app:boxBackgroundColor="@color/background"
         android:hint="@string/Grade"
-        android:background="@color/editTextHint">
+        android:alpha="0.7">
 
-        <AutoCompleteTextView
-            android:id="@+id/class_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="none" />
+            <AutoCompleteTextView
+                android:id="@+id/class_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -146,17 +159,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColorHint="@color/white"
             app:startIconDrawable="@drawable/ic_book"
+            app:startIconTint="@color/black"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:boxBackgroundColor="@color/background"
             android:hint="@string/Select_material_language"
-            android:background="@color/editTextHint">
+            android:alpha="0.7">
 
             <AutoCompleteTextView
                 android:id="@+id/materiallang_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
