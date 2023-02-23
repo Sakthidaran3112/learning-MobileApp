@@ -16,6 +16,7 @@
         android:theme="@style/Theme.Chat_Bot"
         android:usesCleartextTraffic="true">
 
+
         <!-- Introduction Screen -->
         <activity
             android:name=".Activities.IntroductionActivity"
@@ -79,7 +80,7 @@
         <activity
             android:name=".Activities.HomePage.HomeActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".Activities.Register"
@@ -87,7 +88,7 @@
             android:noHistory="true" />
         <activity
             android:name=".Activities.Splash"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -103,6 +104,7 @@
           />
         <activity
             android:name=".Activities.MainActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
             android:exported="true" />
     </application>
 
