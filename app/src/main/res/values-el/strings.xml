@@ -71,6 +71,13 @@
     <string name="Choose_an_answer">Επιλέξτε μια απάντηση</string>
     <string name="Setting_Contact_us_dialog_title">Θέλω να επικοινωνήσω με την ομάδα</string>
     <string name="contact_team_text">Μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας το email μας: seeds.members@listserv.dfn.de</string>
+    <string name="GET_STARTED">ξεκινήστε</string>
+    <string name="Already_User">ήδη χρήστης</string>
+    <string name="what_is_seeds">Τι είναι το SEEDS;</string>
+    <string name="Languages">Γλώσσες</string>
+    <string name="lets_go">ΠΆΜΕ</string>
+    <string name="skip">Παράλειψη</string>
+    <string name="login_existing_account">Είστε ήδη χρήστης; Συνδεθείτε εδώ.</string>
 
 
 </resources>

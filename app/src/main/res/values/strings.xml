@@ -105,9 +105,9 @@
 
 
     <string-array name="Languages">
-        <item>German</item>
-        <item>Spanish</item>
-        <item>Greek</item>
+        <item>Deutsch</item>
+        <item>Español</item>
+        <item>Ελληνικά</item>
         <item>English</item>
     </string-array>
 

@@ -32,18 +32,33 @@ class WelcomePage : AppCompatActivity() {
         supportActionBar?.hide()
 
         setupViews()
-
+        session = SessionManager(applicationContext)
         user_language = ""
-
-
-        val languages = resources.getStringArray(R.array.Languages)
-        val arrayAdapter = ArrayAdapter(this,R.layout.lang_dropdown,languages)
-
-        binding.languageText.setAdapter(arrayAdapter)
 
     }
 
+    private fun setlang() {
+        // access the items of the list
+        val languages = resources.getStringArray(R.array.Languages)
 
+        // access the language spinner
+        val lang_spinner = binding.languageText
+        if (lang_spinner != null) {
+            val adapter = ArrayAdapter(this,
+                R.layout.lang_dropdown, languages)
+            lang_spinner.setAdapter(adapter)
+            lang_spinner.onItemClickListener =
+                AdapterView.OnItemClickListener { parent, view, position, id ->
+
+                    user_language = languages[position]
+
+                    lang(languages[position], adapter)
+
+
+                }
+
+        }
+    }
 
     private fun setupViews() {
         setupAlreadyRegisteredUserButton()
@@ -79,9 +94,8 @@ class WelcomePage : AppCompatActivity() {
 
     private fun lang(lang: String, adapter: ArrayAdapter<String>) {
 
-
         when (lang) {
-            "German" -> {
+            "Deutsch" -> {
 
                 Lingver.getInstance().setLocale(this, "de")
                 recreate()
@@ -89,7 +103,7 @@ class WelcomePage : AppCompatActivity() {
 
 
             }
-            "Spanish" -> {
+            "Español" -> {
 
                 Lingver.getInstance().setLocale(this, "es")
                 recreate()
@@ -105,7 +119,7 @@ class WelcomePage : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
 
             }
-            "Greek" -> {
+            "Ελληνικά" -> {
 
                 Lingver.getInstance().setLocale(this, "el")
                 val eng = Lingver.getInstance().getLanguage()
@@ -113,18 +127,23 @@ class WelcomePage : AppCompatActivity() {
                 recreate()
                 adapter.notifyDataSetChanged()
 
-
             }
             else -> session.savelanguagePref(Lingver.getInstance().getLanguage()).toString()
         }
         adapter.notifyDataSetChanged()
 
     }
+
     override fun onResume() {
         super.onResume()
+
+        setlang()
     }
 
 }
+
+
+
 
 
 

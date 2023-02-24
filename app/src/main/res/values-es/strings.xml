@@ -52,4 +52,11 @@
     <string name="Choose_an_answer">Elija una respuesta</string>
     <string name="Setting_Contact_us_dialog_title">contactar con el equipo</string>
     <string name="contact_team_text">Puedes ponerte en contacto con nosotros a través de nuestro correo electrónico: seeds.members@listserv.dfn.de</string>
+    <string name="GET_STARTED">empezar</string>
+    <string name="Already_User">ya usuario</string>
+    <string name="what_is_seeds">¿Qué es SEEDS?</string>
+    <string name="Languages">Idiomas</string>
+    <string name="lets_go">VAMOS</string>
+    <string name="skip">Saltar</string>
+    <string name="login_existing_account">¿Ya es usuario? Inicie sesión aquí.</string>
 </resources>

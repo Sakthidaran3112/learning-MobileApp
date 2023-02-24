@@ -314,7 +314,7 @@ class Register : AppCompatActivity() {
     private fun lang(lang: String, adapter: ArrayAdapter<String>){
 
 
-        if(lang == "German")
+        if(lang == "Deutsch")
         {
 
             Lingver.getInstance().setLocale(this, "de")
@@ -324,7 +324,7 @@ class Register : AppCompatActivity() {
 
 
         }
-        else if(lang == "Spanish")
+        else if(lang == "Español")
         {
 
             Lingver.getInstance().setLocale(this, "es")
@@ -344,7 +344,7 @@ class Register : AppCompatActivity() {
 
         }
 
-        else if(lang == "Greek")
+        else if(lang == "Ελληνικά")
         {
 
             Lingver.getInstance().setLocale(this, "el")
