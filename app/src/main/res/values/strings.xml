@@ -104,7 +104,6 @@
     <string name="login_existing_account">Already an User? Login here.</string>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="Languages">
         <item>German</item>
         <item>Spanish</item>
@@ -131,11 +130,11 @@
     </string-array>
 
     <string-array name="grades">
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
+        <item>Grade 1</item>
+        <item>Grade 2</item>
+        <item>Grade 3</item>
+        <item>Grade 4</item>
+        <item>Grade 5</item>
 
     </string-array>
 
