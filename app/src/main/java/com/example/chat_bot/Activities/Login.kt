@@ -103,12 +103,6 @@ class Login : AppCompatActivity() {
                 }
             }
 
-
-//            val intent = Intent(this@Login, HomeActivity::class.java)
-//                .setAction(Intent.ACTION_VIEW)
-//                .setData(Uri.parse("success"))
-//            startActivity(intent)
-//            finish()
         }
 
         binding.registerTv.setOnClickListener { register() }
@@ -156,59 +150,6 @@ class Login : AppCompatActivity() {
 
         val user = Userz(user_name, "6-7", "germany", "German", "10", m_androidId.toString())
 
-//        getUserInfoFromLocalDB(user_name)
-//
-//        if (isOnline(this)) {
-//            if (user_name != "") { viewModel.login_user(user)
-//                viewModel.myresponse.observe(this, Observer { response ->
-//
-//                    response.isSuccessful
-//                    if (response.message() == "Not Found" ||response.errorBody()?.equals("404") == true)
-//                    {
-//                        Toast.makeText(this@Login, "Student not found", Toast.LENGTH_SHORT).show()
-//                    }
-//
-//                    else if (response.body() != null)
-//                    {
-//                        if (response.body()!!.auth)
-//                        {
-//                            response.body()!!.token
-//                            response.body()!!.auth
-//                            session.createLoginSession(user_name, m_androidId.toString())
-//                            //  session.save_details(user_age, user_grade)
-//                            val intent = Intent(this@Login, HomeActivity::class.java)
-//                                .setAction(Intent.ACTION_VIEW)
-//                                .setData(Uri.parse("success"))
-//                            startActivity(intent)
-//                            finish()
-//                        }
-//
-//                    }
-//
-//
-//
-//                    Log.d("userr", " response.body = ${response.body()}")
-//                    Log.d("userr", "response.errorBody() = ${response.errorBody()}")
-//                    Log.d("userr", "response.message() = ${response.message()}")
-//
-////                    if (response.isSuccessful) {
-////                        Log.d("user", response.body().toString())
-////                        Log.d("user", response.code().toString())
-////                        session.createLoginSession(user_name, m_androidId.toString())
-////                        //  session.save_details(user_age, user_grade)
-////                        val intent = Intent(this@Login, HomeActivity::class.java)
-////                            .setAction(Intent.ACTION_VIEW)
-////                            .setData(Uri.parse("success"))
-////                        startActivity(intent)
-////                        finish()
-////                    } else
-////                        Log.d("user", response.body().toString())
-////                    Toast.makeText(this@Login, response.body().toString(), Toast.LENGTH_SHORT).show()
-//
-//                })}
-//
-//            else {  Toast.makeText(this, "Please enter username", Toast.LENGTH_SHORT).show()  }
-//        }
     }
 
     private fun setlanguage() {
@@ -281,7 +222,7 @@ class Login : AppCompatActivity() {
             if (dao.isUserExists(onlineUserData.data.name))
             {
                 goToLoginActivity()
-                Toast.makeText(this@Login, "User Exists", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@Login, "User Exists", Toast.LENGTH_SHORT).show()
                 Log.d("jaooo", language)
                 Log.d("jaooo", "Material: $materialLanguage")
 
@@ -298,7 +239,7 @@ class Login : AppCompatActivity() {
                 session.save_details(onlineUserData.data.name,onlineUserData.data.age,onlineUserData.data.grade,materialLanguage)
                 goToLoginActivity()
 
-                Toast.makeText(this@Login, "User added to localDB", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@Login, "User added to localDB", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -384,11 +325,7 @@ class Login : AppCompatActivity() {
                 }
             }
         }
-//        Toast.makeText(
-//            this.requireContext(),
-//            "Connection not available",
-//            Toast.LENGTH_SHORT
-//        ).show()
+
         return false
     }
 }
