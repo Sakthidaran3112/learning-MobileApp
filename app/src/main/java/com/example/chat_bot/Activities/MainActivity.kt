@@ -40,6 +40,8 @@ class MainActivity : AppCompatActivity(), msgAdapter.Callbackinter{
         customMsg("Hello, Seeds Asssitant here!!, How may i help you?")
 
         Log.v(TAG, "In main")
+
+
     }
 
     override fun onStart() {

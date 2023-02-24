@@ -2,19 +2,21 @@ package com.example.chat_bot.Activities.Welcomepage
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.databinding.DataBindingUtil
+import androidx.compose.ui.text.intl.Locale
 import androidx.databinding.DataBindingUtil.setContentView
 import com.example.chat_bot.Activities.IntroductionActivity
 import com.example.chat_bot.Activities.Login
+import com.example.chat_bot.Activities.MainActivity
 import com.example.chat_bot.R
 import com.example.chat_bot.databinding.ActivityWelcomepageBinding
-import com.example.chat_bot.utils.Language
 import com.example.chat_bot.utils.SessionManager
 import com.yariksoffice.lingver.Lingver
+
 
 class WelcomePage : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomepageBinding
@@ -36,6 +38,7 @@ class WelcomePage : AppCompatActivity() {
         user_language = ""
 
     }
+
 
     private fun setlang() {
         // access the items of the list
@@ -136,9 +139,10 @@ class WelcomePage : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
         setlang()
+
     }
+
 
 }
 

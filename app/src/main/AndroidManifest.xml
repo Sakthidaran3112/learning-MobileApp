@@ -101,6 +101,7 @@
         <activity
             android:name=".Activities.Login"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:noHistory="true"
           />
         <activity
             android:name=".Activities.MainActivity"

@@ -274,14 +274,14 @@ class Register : AppCompatActivity() {
     private fun materiallang(lang: String, adapter: ArrayAdapter<String>){
 
 
-        if(lang == "German")
+        if(lang == "Deutsch")
         {
             recreate()
             adapter.notifyDataSetChanged()
 
 
         }
-        else if(lang == "Spanish")
+        else if(lang == "Español")
         {
             recreate()
             adapter.notifyDataSetChanged()
@@ -295,7 +295,7 @@ class Register : AppCompatActivity() {
 
         }
 
-        else if(lang == "Greek")
+        else if(lang == "Ελληνικά")
         {
 
 
