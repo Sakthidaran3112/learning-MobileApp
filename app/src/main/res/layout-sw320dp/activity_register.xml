@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_94_1942242_lightbulb_learning_clipart_hd_png_download" />
+        app:srcCompat="@drawable/app_background" />
     <TextView
         android:id="@+id/Already_user_login_btn"
         android:layout_width="wrap_content"
@@ -83,29 +83,28 @@
             android:text="@string/AccountRegister"
             android:textAlignment="center"
             android:textColor="@color/white"/>
-
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:alpha="0.7"
             android:paddingTop="50dp"
-            app:endIconMode="clear_text"
-            app:boxStrokeColor="@android:color/darker_gray"
-            app:startIconDrawable="@drawable/ic_person"
-            android:textColorHint="@color/black"
+            android:textColorHint="@android:color/black"
             app:boxBackgroundColor="@color/background"
-            app:startIconTint="@color/black"
-            android:alpha="0.7">
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:endIconMode="clear_text"
+            app:endIconTint="@android:color/darker_gray"
+            app:hintTextColor="@android:color/darker_gray"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/black">
 
             <EditText
                 android:id="@+id/username_et"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:layout_gravity="center"
-                android:background="@color/background"
                 android:hint="@string/username_register"
-                android:inputType="text"
-                android:textColor="@color/black">
+                android:textColor="@android:color/black">
 
             </EditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -171,8 +170,7 @@
                 android:id="@+id/materiallang_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:inputType="text"
+                android:inputType="none"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 

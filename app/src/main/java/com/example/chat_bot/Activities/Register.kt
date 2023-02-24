@@ -64,7 +64,12 @@ class Register : AppCompatActivity() {
 
         USER += getDevID()
 
+        binding.backgroundImage?.setOnClickListener{
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
 
         hideActionBar()
         //isOnline(this)
@@ -151,84 +156,16 @@ class Register : AppCompatActivity() {
         }
 
 
-
-
-
-
-
-//            spinner.onItemSelectedListener = object :
-//                AdapterView.OnItemSelectedListener {
-//                override fun onItemSelected(
-//                    parent: AdapterView<*>,
-//                    view: View, position: Int, id: Long,
-//                ) {
-//                    Toast.makeText(this@Register, languages[position], Toast.LENGTH_SHORT).show()
-//                }
-//
-//                override fun onNothingSelected(parent: AdapterView<*>) {
-//                    // write code to perform some action
-//                }
-//            }
-        // }
-
-//        binding.langBtn.setOnClickListener{
-//            lang()
-//            Toast.makeText(this, "cick", Toast.LENGTH_SHORT).show()
-//        }
-
-        //            val mutListIterator = grade.listIterator()
-//
-//            while(mutListIterator.hasNext()){
-//                print(mutListIterator.next())
-//            }
-
-
-
-/* Name of your Custom JSON list */
-//        val resourceId =
-//            resources.getIdentifier("country_avail", "raw", applicationContext.packageName)
-//
-//        val countryPicker: CountryPickerDialog = CountryPickerDialog(this,
-//            { country, flagResId ->
-//
-//
-//
-//            /* Get Country Name: country.getCountryName(context); */
-//
-//                /* Call countryPicker.dismiss(); to prevent memory leaks */
-//            } /* Set to false if you want to disable Dial Code in the results and true if you want to show it
-//         Set to zero if you don't have a custom JSON list of countries in your raw file otherwise use
-//         resourceId for your customly available countries */, false, 0)
-//
-//        countryPicker.show()
-
-
-      //  setlang()
-
         alreadyUserLogin()
 
 
-    }
-
-    private fun gotoLoginScreen() {
-        val intent = Intent(this, Login::class.java)
-            .setAction(Intent.ACTION_VIEW)
-            .setData(Uri.parse("success"))
-        startActivity(intent)
-        finish()
     }
 
     fun View.hideKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(windowToken, 0)
     }
-//    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-//        if (currentFocus != null) {
-//            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-//        }
-//        return super.dispatchTouchEvent(ev)
-//    }
+
 
     private fun setMateriallang() {
 
@@ -253,15 +190,6 @@ class Register : AppCompatActivity() {
 
                 materiallang(languages[position], adapter)
                 user_language = languages[position]
-//                Toast.makeText(this@Register,
-//                    user_language,
-//                    Toast.LENGTH_SHORT).show()
-              //  lang(languages[position],adapter)
-
-
-
-
-
             }
 
         }
@@ -287,15 +215,7 @@ class Register : AppCompatActivity() {
             lang_spinner.onItemClickListener = OnItemClickListener { parent, view, position, id ->
 
                 user_language = languages[position]
-//                Toast.makeText(this@Register,
-//                    user_language,
-//                    Toast.LENGTH_SHORT).show()
                 lang(languages[position],adapter)
-
-
-
-
-
             }
 
         }
@@ -303,62 +223,13 @@ class Register : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
-        init_views()
         setlang()
         setMateriallang()
 
     }
 
-    fun init_views() {
-
-
-
-        // access the language spinner
-//        val country_spinner = binding.countryBtn
-//        if (country_spinner != null) {
-//            val adapter = ArrayAdapter(this,
-//                R.layout.lang_dropdown, countries)
-//            country_spinner.setAdapter(adapter)
-//
-//            country_spinner.onItemClickListener = OnItemClickListener { parent, view, position, id ->
-//                Toast.makeText(this@Register,
-//                    countries[position],
-//                    Toast.LENGTH_SHORT).show()
-//
-//                user_country = countries[position]
-////                lang(countries[position])
-//
-//
-//            }
-//        }
-
-
-
-//        // access the items of the list
-//        val garde = resources.getStringArray(R.array.grades)
-//
-//        // access the language spinner
-//        val grade_spinner = binding.classBtn
-//        if (grade_spinner != null) {
-//            val adapter = ArrayAdapter(this,
-//                R.layout.age_drop_down, gradesList)
-//            grade_spinner.setAdapter(adapter)
-//
-//            grade_spinner.onItemClickListener = OnItemClickListener { parent, view, position, id ->
-//                Toast.makeText(this@Register,
-//                    age.get(position),
-//                    Toast.LENGTH_SHORT).show()
-//                //age_setter(age.get(position))
-//
-//
-//            }
-    }
-
 
     private fun setgrade(it: MutableList<String>) {
-//        // access the items of the list
-//        val garde = resources.getStringArray(R.array.grades)
         grade_spinner = binding.classBtn
         // access the language spinner
         if (grade_spinner != null) {
@@ -368,14 +239,8 @@ class Register : AppCompatActivity() {
             adapter.notifyDataSetChanged()
 
             grade_spinner.onItemClickListener = OnItemClickListener { parent, view, position, id ->
-                //Toast.makeText(this@Register,
-//                    it[position].toString(),
-//                    Toast.LENGTH_SHORT).show()
                 adapter.notifyDataSetChanged()
                 user_grade = it[position]
-                //age_setter(age.get(position))
-
-
             }
     }
 
@@ -396,9 +261,7 @@ class Register : AppCompatActivity() {
 
 
             age_spinner.onItemClickListener = OnItemClickListener { parent, view, position, id ->
-//                Toast.makeText(this@Register,
-//                    it[position].toString(),
-//                    Toast.LENGTH_SHORT).show()
+
                 user_age = it[position]
                 adapter.notifyDataSetChanged()
                 //age_setter(age.get(position))
@@ -413,9 +276,6 @@ class Register : AppCompatActivity() {
 
         if(lang == "German")
         {
-
-
-            // session.savelanguagePref(Lingver.getInstance().setLocale(this, "de").toString())
             recreate()
             adapter.notifyDataSetChanged()
 
@@ -423,9 +283,6 @@ class Register : AppCompatActivity() {
         }
         else if(lang == "Spanish")
         {
-
-
-            // session.savelanguagePref(Lingver.getInstance().setLocale(this, "es").toString())
             recreate()
             adapter.notifyDataSetChanged()
 
@@ -450,15 +307,6 @@ class Register : AppCompatActivity() {
         else
 
         adapter.notifyDataSetChanged()
-
-//        else if(lang == "Greek")
-//        {
-//            Lingver.getInstance().setLocale(this, "el")
-//            recreate()
-        //              session.savelanguagePref(lang)
-//        }
-
-
     }
 
 
@@ -510,14 +358,6 @@ class Register : AppCompatActivity() {
         else
             session.savelanguagePref(Lingver.getInstance().getLanguage()).toString()
         adapter.notifyDataSetChanged()
-
-//        else if(lang == "Greek")
-//        {
-//            Lingver.getInstance().setLocale(this, "el")
-//            recreate()
-    //              session.savelanguagePref(lang)
-//        }
-
 
     }
 
@@ -604,10 +444,6 @@ class Register : AppCompatActivity() {
             user_grade = binding.classBtn.text.toString().trim()
             materialLang = binding.materiallangBtn.text.toString().trim()
 
-//            getDevID()
-//            var deviceID = "M-f8f2e818-80-$m_androidId"
-          //  Log.d("tara", deviceID)
-
             user_country = "Germany"
 
             user_grade
@@ -656,40 +492,7 @@ class Register : AppCompatActivity() {
                     }
                     response.code()
                     response.body()
-//            if (response.isSuccessful)
-//            {
-//                Log.d("user", response.body().toString())
-//                Log.d("user", response.code().toString())
-//                session.createLoginSession(user_name, m_androidId.toString())
-//                session.save_details(user_age, user_grade)
-//                val intent = Intent(this, Login::class.java)
-//                    .setAction(Intent.ACTION_VIEW)
-//                    .setData(Uri.parse("success"))
-//                startActivity(intent)
-//                finish()
-//            }
-//            else
-//                Log.d("user", response.body().toString())
-//            Toast.makeText(this, response.message().toString(), Toast.LENGTH_SHORT).show()
                 })
-
-
-//        if(user_name == "alpha")
-//        {
-//            session.createLoginSession(user_name, m_androidId.toString())
-//            session.save_details(user_age, user_grade, "germany")
-//            val intent = Intent(this, HomeActivity::class.java)
-//                .setAction(Intent.ACTION_VIEW)
-//                .setData(Uri.parse("success"))
-//            startActivity(intent)
-//            finish()
-//        }
-//        else
-//        {
-//            Toast.makeText(this, "wrong credentials", Toast.LENGTH_SHORT).show()
-//        }
-
-
             }
         }
 
@@ -711,10 +514,6 @@ class Register : AppCompatActivity() {
             val capabilities =
                 connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
             if (capabilities != null) {
-
-                //  Toast.makeText(this.requireContext(), "Connection available", Toast.LENGTH_SHORT)
-                //    .show()
-
                 if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
                     Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
                     return true
@@ -727,13 +526,6 @@ class Register : AppCompatActivity() {
                 }
             }
         }
-
-
-//        Toast.makeText(
-//            this.requireContext(),
-//            "Connection not available",
-//            Toast.LENGTH_SHORT
-//        ).show()
         return false
     }
 

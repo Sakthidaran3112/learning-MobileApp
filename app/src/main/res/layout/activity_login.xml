@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_94_1942242_lightbulb_learning_clipart_hd_png_download" />
+        app:srcCompat="@drawable/app_background" />
 
     <LinearLayout
         android:layout_width="match_parent"

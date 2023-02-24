@@ -2,14 +2,17 @@ package com.example.chat_bot.Activities.Welcomepage
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.DataBindingUtil.setContentView
 import com.example.chat_bot.Activities.IntroductionActivity
 import com.example.chat_bot.Activities.Login
 import com.example.chat_bot.R
 import com.example.chat_bot.databinding.ActivityWelcomepageBinding
+import com.example.chat_bot.utils.Language
 import com.example.chat_bot.utils.SessionManager
 import com.yariksoffice.lingver.Lingver
 
@@ -33,7 +36,13 @@ class WelcomePage : AppCompatActivity() {
         user_language = ""
 
 
+        val languages = resources.getStringArray(R.array.Languages)
+        val arrayAdapter = ArrayAdapter(this,R.layout.lang_dropdown,languages)
+
+        binding.languageText.setAdapter(arrayAdapter)
+
     }
+
 
 
     private fun setupViews() {
@@ -66,29 +75,7 @@ class WelcomePage : AppCompatActivity() {
         }
     }
 
-    private fun setlang() {
-        // access the items of the list
-        val languages = resources.getStringArray(R.array.Languages)
 
-        // access the language spinner
-        val lang_spinner = binding.langButton
-        if (lang_spinner != null) {
-            val adapter = ArrayAdapter(
-                this,
-                R.layout.lang_spinner, languages
-            )
-            lang_spinner.setAdapter(adapter)
-
-                AdapterView.OnItemClickListener { parent, view, position, id ->
-
-                    user_language = languages[position]
-
-                    lang(languages[position], adapter)
-
-
-                }
-        }
-    }
 
     private fun lang(lang: String, adapter: ArrayAdapter<String>) {
 
@@ -135,7 +122,6 @@ class WelcomePage : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        setlang()
     }
 
 }

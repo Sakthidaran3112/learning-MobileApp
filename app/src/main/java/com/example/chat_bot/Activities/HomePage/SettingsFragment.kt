@@ -114,41 +114,41 @@ class SettingsFragment : Fragment() {
         Log.d("dev_id", "Device ID: $m_androidId")
     }
 
-    private fun EditUserDetails() {
-
-        // Toast.makeText(context, "wow", Toast.LENGTH_SHORT).show()
-        val builder = AlertDialog.Builder(context, R.style.CustomAlertDialog)
-            .create()
-
-        val view = LayoutInflater.from(context).inflate(R.layout.edit_user_dialog, null)
-
-        builder.setView(view)
-
-        val age_EditText = view.findViewById<Button>(R.id.et_age)
-        val grade_EditText = view.findViewById<Button>(R.id.et_grade)
-        val materialLang_EditText= view.findViewById<Button>(R.id.et_material)
-
-        var user = session.getUserDetails()
-
-
-       var age =  age_EditText.text
-        var grade =  grade_EditText.text
-        var  materialLang =  materialLang_EditText.text
-        var username = user.get("name")
-
-        val btnDone = view.findViewById<Button>(R.id.btn_done)
-
-       // val user_details = User(username.toString(), age.toString(), country = "germany",
-          //  grade.toString(), "",  )
-
-        btnDone.setOnClickListener {
-
-          //  SaveToLocalDB(age,grade,materialLang,)
-
-            (context as Activity).recreate()
-            builder.dismiss()
-        }
-    }
+//    private fun EditUserDetails() {
+//
+//        // Toast.makeText(context, "wow", Toast.LENGTH_SHORT).show()
+//        val builder = AlertDialog.Builder(context, R.style.CustomAlertDialog)
+//            .create()
+//
+//        val view = LayoutInflater.from(context).inflate(R.layout.edit_user_dialog, null)
+//
+//        builder.setView(view)
+//
+//        val age_EditText = view.findViewById<Button>(R.id.et_age)
+//        val grade_EditText = view.findViewById<Button>(R.id.et_grade)
+//        val materialLang_EditText= view.findViewById<Button>(R.id.et_material)
+//
+//        var user = session.getUserDetails()
+//
+//
+//       var age =  age_EditText.text
+//        var grade =  grade_EditText.text
+//        var  materialLang =  materialLang_EditText.text
+//        var username = user.get("name")
+//
+//        val btnDone = view.findViewById<Button>(R.id.btn_done)
+//
+//       // val user_details = User(username.toString(), age.toString(), country = "germany",
+//          //  grade.toString(), "",  )
+//
+//        btnDone.setOnClickListener {
+//
+//          //  SaveToLocalDB(age,grade,materialLang,)
+//
+//            (context as Activity).recreate()
+//            builder.dismiss()
+//        }
+//    }
 
 
     private fun showUserProfile() {
