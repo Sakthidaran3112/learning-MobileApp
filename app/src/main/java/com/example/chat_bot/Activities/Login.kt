@@ -9,13 +9,14 @@ import android.os.Bundle
 import android.provider.Settings.Secure
 import android.provider.Settings.Secure.ANDROID_ID
 import android.util.Log
+import android.view.KeyEvent
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.chat_bot.Activities.HomePage.HomeActivity
+import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
 import com.example.chat_bot.Room.Dao.SeedsDao
 import com.example.chat_bot.Room.Entities.OnlineUserData
@@ -23,14 +24,13 @@ import com.example.chat_bot.Room.SeedsDatabase
 import com.example.chat_bot.data.User
 import com.example.chat_bot.data.Userz
 import com.example.chat_bot.databinding.ActivityLoginBinding
+import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSApi
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSRepository
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSViewModel
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSViewModelFact
-import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSApi
 import com.example.chat_bot.utils.SessionManager
 import com.yariksoffice.lingver.Lingver
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 
 class Login : AppCompatActivity() {
@@ -55,12 +55,9 @@ class Login : AppCompatActivity() {
 
         materialLanguage = ""
         session = SessionManager(applicationContext)
-
-
         checklang()
         viewModel = ViewModelProvider(this, SEEDSViewModelFact(SEEDSRepository(retrofitService)))
             .get(SEEDSViewModel::class.java)
-
 
 
         binding.backgroundImage?.setOnClickListener{
@@ -328,4 +325,14 @@ class Login : AppCompatActivity() {
 
         return false
     }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            val intent = Intent(this@Login, WelcomePage::class.java)
+            startActivity(intent)
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
 }
+

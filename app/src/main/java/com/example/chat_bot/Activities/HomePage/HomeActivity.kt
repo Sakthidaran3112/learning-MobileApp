@@ -1,13 +1,16 @@
 package com.example.chat_bot.Activities.HomePage
 import android.app.Activity
+import android.content.Intent
 import android.content.res.Resources
 import android.net.http.SslCertificate.restoreState
 import android.os.Bundle
 import android.os.Parcelable
 import android.os.PersistableBundle
+import android.view.KeyEvent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
 import com.example.chat_bot.databinding.ActivityHomeBinding
 import com.example.chat_bot.utils.SessionManager
@@ -32,14 +35,6 @@ class HomeActivity : AppCompatActivity() {
 
         val topic_namez = intent.getSerializableExtra("Total score").toString()
         topic_namez
-//       val  topic_name = intent.getSerializableExtra("Total score").toString()
-//        Toast.makeText(applicationContext, topic_name, Toast.LENGTH_SHORT).show()
-//
-//        if (topic_name != "null")
-//        {
-//            val chatFragment = ChatFragment()
-//            chatFragment.jugnu(topic_name)
-//        }
 
 
         tabLayout = binding.tabslayout
@@ -55,6 +50,8 @@ class HomeActivity : AppCompatActivity() {
             //checksavedlangpref()
 
         }.attach()
+
+
     }
 
 
@@ -67,5 +64,13 @@ class HomeActivity : AppCompatActivity() {
            // Toast.makeText(this, lang, Toast.LENGTH_SHORT).show()
         }
         else Toast.makeText(this, session.getlanguagePref(), Toast.LENGTH_SHORT).show()
+    }
+
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+           moveTaskToBack(true)
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }

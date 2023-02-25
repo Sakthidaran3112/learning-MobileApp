@@ -116,8 +116,6 @@ class WelcomePage : AppCompatActivity() {
             "English" -> {
 
                 Lingver.getInstance().setLocale(this, "en")
-                val eng = Lingver.getInstance().getLanguage()
-                session.savelanguagePref(eng)
                 recreate()
                 adapter.notifyDataSetChanged()
 
@@ -125,13 +123,10 @@ class WelcomePage : AppCompatActivity() {
             "Ελληνικά" -> {
 
                 Lingver.getInstance().setLocale(this, "el")
-                val eng = Lingver.getInstance().getLanguage()
-                session.savelanguagePref(eng)
                 recreate()
                 adapter.notifyDataSetChanged()
 
             }
-            else -> session.savelanguagePref(Lingver.getInstance().getLanguage()).toString()
         }
         adapter.notifyDataSetChanged()
 
@@ -140,7 +135,6 @@ class WelcomePage : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         setlang()
-
     }
 
 

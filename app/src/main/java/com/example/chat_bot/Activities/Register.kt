@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
@@ -18,6 +19,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.chat_bot.Activities.HomePage.HomeActivity
+import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
 import com.example.chat_bot.Room.Dao.SeedsDao
 import com.example.chat_bot.Room.SeedsDatabase
@@ -536,5 +538,13 @@ class Register : AppCompatActivity() {
         alreadyUserbtn.setOnClickListener {
             startActivity(Intent(this, Login::class.java))
         }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            val intent = Intent(this@Register, WelcomePage::class.java)
+            startActivity(intent)
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }
