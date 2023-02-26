@@ -20,6 +20,7 @@ class Splash : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
         setContentView(R.layout.activity_splash)
         session = SessionManager(applicationContext)
 

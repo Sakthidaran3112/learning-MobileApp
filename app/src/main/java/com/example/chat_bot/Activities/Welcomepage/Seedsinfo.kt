@@ -10,6 +10,7 @@ import com.example.chat_bot.R
 
 class Seedsinfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seedsinfo)
 

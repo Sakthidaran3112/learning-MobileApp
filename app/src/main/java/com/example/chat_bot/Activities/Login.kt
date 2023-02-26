@@ -52,6 +52,7 @@ class Login : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         binding = ActivityLoginBinding.inflate(layoutInflater)

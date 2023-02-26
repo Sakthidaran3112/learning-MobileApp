@@ -41,6 +41,7 @@ import java.util.*
 
 class Register : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityRegisterBinding
     lateinit var viewModel: SEEDSViewModel
     private val retrofitService = SEEDSApi.getInstance()
@@ -60,7 +61,7 @@ class Register : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
         setContentView(R.layout.activity_register)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -70,6 +71,20 @@ class Register : AppCompatActivity() {
 
         USER += getDevID()
 
+        binding.classBtn.setOnClickListener{
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
+
+        binding.ageBtn.setOnClickListener{
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
+
         binding.backgroundImage?.setOnClickListener{
             binding.usernameEt.clearFocus()
             val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -77,7 +92,6 @@ class Register : AppCompatActivity() {
             foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
         }
 
-        hideActionBar()
         //isOnline(this)
         viewModel = ViewModelProvider(this, SEEDSViewModelFact(SEEDSRepository(retrofitService))).get(SEEDSViewModel::class.java)
         session = SessionManager(applicationContext)

@@ -30,13 +30,12 @@ class IntroductionActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_introduction)
 
         setupListeners()
 
-        val actionBar: ActionBar? = supportActionBar
-        actionBar?.hide()
     }
 
 
@@ -61,7 +60,7 @@ class IntroductionActivity : AppCompatActivity() {
         letsGoButton = findViewById(R.id.lets_go_button)
         letsGoButton.visibility = GONE
         letsGoButton.setOnClickListener {
-            startActivity(Intent(this, Register::class.java))
+            startActivity(Intent(this@IntroductionActivity, Register::class.java))
         }
     }
 

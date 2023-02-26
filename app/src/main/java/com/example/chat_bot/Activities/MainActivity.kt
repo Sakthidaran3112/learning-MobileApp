@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity(), msgAdapter.Callbackinter{
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root

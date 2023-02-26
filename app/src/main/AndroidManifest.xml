@@ -82,8 +82,9 @@
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".Activities.Register"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:noHistory="true" />
+            android:windowSoftInputMode="adjustPan"
+            android:noHistory="true"
+            />
         <activity
             android:name=".Activities.Splash"
             android:exported="true">
