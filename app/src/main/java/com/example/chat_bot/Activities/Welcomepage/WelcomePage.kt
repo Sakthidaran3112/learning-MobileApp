@@ -28,10 +28,10 @@ class WelcomePage : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
+
         super.onCreate(savedInstanceState)
         binding = setContentView(this, R.layout.activity_welcomepage)
-        supportActionBar?.hide()
+
 
         setupViews()
         session = SessionManager(applicationContext)
