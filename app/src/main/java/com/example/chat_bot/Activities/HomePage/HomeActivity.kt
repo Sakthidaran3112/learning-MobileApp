@@ -33,10 +33,6 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val topic_namez = intent.getSerializableExtra("Total score").toString()
-        topic_namez
-
-
         tabLayout = binding.tabslayout
         viewPager2 = binding.viewpager
         viewPager2.adapter = PagerAdapter(this)

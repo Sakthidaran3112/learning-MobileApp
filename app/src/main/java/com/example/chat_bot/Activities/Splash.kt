@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.chat_bot.Activities.HomePage.HomeActivity
 import com.example.chat_bot.Activities.Welcomepage.WelcomePage
@@ -26,6 +27,7 @@ class Splash : AppCompatActivity() {
             handleNavigationByAuthentication()
             finish()
         }, splashDuration)
+
     }
 
     private fun handleNavigationByAuthentication() {

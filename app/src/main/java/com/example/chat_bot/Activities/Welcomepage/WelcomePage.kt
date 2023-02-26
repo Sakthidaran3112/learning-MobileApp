@@ -45,7 +45,7 @@ class WelcomePage : AppCompatActivity() {
         val languages = resources.getStringArray(R.array.Languages)
 
         // access the language spinner
-        val lang_spinner = binding.languageText
+        val lang_spinner = binding.langBtnn
         if (lang_spinner != null) {
             val adapter = ArrayAdapter(this,
                 R.layout.lang_dropdown, languages)

@@ -58,7 +58,8 @@
             app:endIconTint="@android:color/darker_gray"
             app:hintTextColor="@android:color/darker_gray"
             app:startIconDrawable="@drawable/ic_person"
-            app:startIconTint="@color/black">
+            app:startIconTint="@color/black"
+            android:focusable="true">
 
             <EditText
                 android:id="@+id/username_et"

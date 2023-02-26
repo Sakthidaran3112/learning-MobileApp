@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Register"
-    android:background="@color/white"
-    android:theme="@style/Theme.AppCompat.NoActionBar">
+    android:background="@color/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:theme="@style/Theme.AppCompat.NoActionBar"
+    tools:context=".Activities.Register">
 
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
         android:alpha="0.08"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/app_background" />
-    <TextView
-        android:id="@+id/Already_user_login_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login_existing_account"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -36,18 +27,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:hint="@string/lang_drop_down_label"
-        app:startIconTint="@color/white"
-        app:endIconTint="@color/white"
-        android:background="@drawable/custom_button_rectangle"
+        android:background="@drawable/custom_button_language"
+        android:hint="@string/Languages"
+        android:textColorHint="@color/profile"
+        app:boxStrokeColor="@color/light_blue_600"
+        app:hintTextColor="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:startIconDrawable="@drawable/language_icon">
+        app:startIconDrawable="@drawable/language_icon"
+        app:startIconTint="@color/white">
 
         <AutoCompleteTextView
             android:id="@+id/lang_btnn"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:inputType="none"
             android:text="@string/lang_drop_down_text" />
@@ -57,12 +52,14 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="10dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!--        <Button-->
         <!--            android:layout_width="wrap_content"-->
@@ -75,26 +72,29 @@
             android:id="@+id/person_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/person_foreground"/>
+            android:src="@drawable/person_foreground" />
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/AccountRegister"
+            android:baselineAligned="false"
+            android:text="@string/create_account"
             android:textAlignment="center"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:alpha="0.7"
-            android:paddingTop="50dp"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/black"
             app:boxBackgroundColor="@color/background"
             app:boxStrokeColor="@android:color/darker_gray"
             app:endIconMode="clear_text"
-            app:endIconTint="@android:color/darker_gray"
-            app:hintTextColor="@android:color/darker_gray"
             app:startIconDrawable="@drawable/ic_person"
             app:startIconTint="@color/black">
 
@@ -115,13 +115,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:alpha="0.7"
             android:hint="@string/age_drop_down_text"
             android:textColorHint="@color/black"
-            app:boxStrokeColor="@android:color/darker_gray"
             app:boxBackgroundColor="@color/background"
+            app:boxStrokeColor="@android:color/darker_gray"
             app:startIconDrawable="@drawable/ic_badge"
-            app:startIconTint="@color/black"
-            android:alpha="0.7">
+            app:startIconTint="@color/black">
 
             <AutoCompleteTextView
                 android:id="@+id/age_btn"
@@ -133,17 +133,17 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:startIconDrawable="@drawable/ic_grade"
-        app:startIconTint="@color/black"
-        android:textColorHint="@color/black"
-        app:boxStrokeColor="@android:color/darker_gray"
-        app:boxBackgroundColor="@color/background"
-        android:hint="@string/Grade"
-        android:alpha="0.7">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alpha="0.7"
+            android:hint="@string/Grade"
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/background"
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:startIconDrawable="@drawable/ic_grade"
+            app:startIconTint="@color/black">
 
             <AutoCompleteTextView
                 android:id="@+id/class_btn"
@@ -151,20 +151,20 @@
                 android:layout_height="wrap_content"
                 android:inputType="none"
                 android:textColor="@color/black" />
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:startIconDrawable="@drawable/ic_book"
-            app:startIconTint="@color/black"
-            android:textColorHint="@color/black"
-            app:boxStrokeColor="@android:color/darker_gray"
-            app:boxBackgroundColor="@color/background"
+            android:alpha="0.7"
             android:hint="@string/Select_material_language"
-            android:alpha="0.7">
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/background"
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:startIconDrawable="@drawable/ic_book"
+            app:startIconTint="@color/black">
 
             <AutoCompleteTextView
                 android:id="@+id/materiallang_btn"
@@ -181,7 +181,16 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
             android:text="@string/Register_btn" />
-<!--      //  </com.google.android.material.textfield.TextInputLayout>-->
+
+        <TextView
+            android:id="@+id/Already_user_login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/login_existing_account"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/btn_reg" />
+        <!--      //  </com.google.android.material.textfield.TextInputLayout>-->
 
 
     </LinearLayout>

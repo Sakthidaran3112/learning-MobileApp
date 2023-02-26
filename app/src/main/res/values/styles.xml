@@ -4,6 +4,8 @@
 <!--        <item name="android:background">@color/black_overlay</item>-->
     </style>
 
+
+
     <style name="Theme.AppCompat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -27,4 +29,6 @@
     <style name="messageStyle">Tablayout
         <item name="android:textSize">20sp</item>
     </style>
+
+    <style name="Seeds">Seeds_app</style>
 </resources>

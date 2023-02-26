@@ -1,17 +1,22 @@
 package com.example.chat_bot.Activities
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
 
 class IntroductionActivity : AppCompatActivity() {
@@ -23,12 +28,17 @@ class IntroductionActivity : AppCompatActivity() {
     private lateinit var viewPagerAdapter: ViewPagerAdapter
     private val currentPage : MutableLiveData<Int> =  MutableLiveData<Int>()
 
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_introduction)
 
         setupListeners()
+
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.hide()
     }
+
 
     private fun setupListeners() {
         setupSkipButton()
@@ -114,4 +124,14 @@ class IntroductionActivity : AppCompatActivity() {
 
         override fun onPageScrollStateChanged(state: Int) {}
     }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            val intent = Intent(this@IntroductionActivity, WelcomePage::class.java)
+            startActivity(intent)
+            finish()
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
 }

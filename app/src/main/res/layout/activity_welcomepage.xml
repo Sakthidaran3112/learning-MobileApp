@@ -117,10 +117,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:startIconDrawable="@drawable/language_icon"
-            app:startIconTint="@color/white">
+            app:startIconTint="@color/white"
+            android:focusableInTouchMode="true"
+            android:focusable="true">
 
             <AutoCompleteTextView
-                android:id="@+id/language_text"
+                android:id="@+id/langBtnn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

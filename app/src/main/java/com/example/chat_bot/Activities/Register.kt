@@ -15,6 +15,9 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -54,6 +57,7 @@ class Register : AppCompatActivity() {
     var m_androidId: String ?= null
     private lateinit var language: String
     private lateinit var alreadyUserbtn: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -159,7 +163,6 @@ class Register : AppCompatActivity() {
 
 
         alreadyUserLogin()
-
 
     }
 
@@ -547,4 +550,6 @@ class Register : AppCompatActivity() {
         }
         return super.onKeyDown(keyCode, event)
     }
+
+
 }

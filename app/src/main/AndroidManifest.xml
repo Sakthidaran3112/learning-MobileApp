@@ -21,18 +21,17 @@
         <activity
             android:name=".Activities.IntroductionActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:noHistory="true">
 
             <!-- Welcome Page -->
         </activity>
         <activity
             android:name=".Activities.Welcomepage.WelcomePage"
-            android:exported="true" />
+            android:exported="true"
+            android:noHistory="true"/>
         <activity
             android:name=".Activities.Welcomepage.Seedsinfo"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="true"
             android:noHistory="true">
 
         </activity>
@@ -80,7 +79,6 @@
         <activity
             android:name=".Activities.HomePage.HomeActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".Activities.Register"
@@ -88,7 +86,7 @@
             android:noHistory="true" />
         <activity
             android:name=".Activities.Splash"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
