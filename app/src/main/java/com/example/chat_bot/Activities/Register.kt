@@ -71,26 +71,7 @@ class Register : AppCompatActivity() {
 
         USER += getDevID()
 
-        binding.classBtn.setOnClickListener{
-            binding.usernameEt.clearFocus()
-            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
-            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
-        }
-
-        binding.ageBtn.setOnClickListener{
-            binding.usernameEt.clearFocus()
-            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-
-            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
-        }
-
-        binding.backgroundImage?.setOnClickListener{
-            binding.usernameEt.clearFocus()
-            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-
-            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
-        }
 
         //isOnline(this)
         viewModel = ViewModelProvider(this, SEEDSViewModelFact(SEEDSRepository(retrofitService))).get(SEEDSViewModel::class.java)
@@ -177,6 +158,7 @@ class Register : AppCompatActivity() {
 
 
         alreadyUserLogin()
+        keyboardfocus()
 
     }
 
@@ -565,5 +547,28 @@ class Register : AppCompatActivity() {
         return super.onKeyDown(keyCode, event)
     }
 
+    private fun keyboardfocus()
+    {
+        binding.classBtn.setOnClickListener {
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
+
+         binding.ageBtn.setOnClickListener {
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
+
+        binding.backgroundImage?.setOnClickListener {
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
+
+    }
 }

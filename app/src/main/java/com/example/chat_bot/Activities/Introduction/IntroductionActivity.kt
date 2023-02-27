@@ -28,20 +28,20 @@ class IntroductionActivity : AppCompatActivity() {
     private lateinit var viewPagerAdapter: ViewPagerAdapter
     private val currentPage : MutableLiveData<Int> =  MutableLiveData<Int>()
 
-    @RequiresApi(Build.VERSION_CODES.R)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_introduction)
 
         setupListeners()
-
+        setupLetsGoButton()
     }
 
 
     private fun setupListeners() {
         setupSkipButton()
-        setupLetsGoButton()
+
         setupSlideViewPager()
         setupIndicatorLayout()
         setupPageListener()

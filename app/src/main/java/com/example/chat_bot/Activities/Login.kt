@@ -111,8 +111,6 @@ class Login : AppCompatActivity() {
         // var conn: InternetConnection = fal
         // conn.isOnline(this)
         getDevID()
-        hideActionBar()
-
 
     }
 
@@ -301,9 +299,7 @@ class Login : AppCompatActivity() {
         //Toast.makeText(this, m_androidId.toString(), Toast.LENGTH_SHORT).show()
         Log.d("DevID", m_androidId.toString())
     }
-    private fun hideActionBar() {
-        supportActionBar?.hide()
-    }
+
 
     fun isOnline(context: Context): Boolean {
         val connectivityManager =
