@@ -79,7 +79,8 @@
         <activity
             android:name=".Activities.HomePage.HomeActivity"
             android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:noHistory="true"/>
         <activity
             android:name=".Activities.Register"
             android:windowSoftInputMode="adjustPan"
@@ -99,8 +100,9 @@
             android:exported="true" />
         <activity
             android:name=".Activities.Login"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:windowSoftInputMode="adjustResize"
             android:noHistory="true"
+            android:exported="true"
           />
         <activity
             android:name=".Activities.MainActivity"

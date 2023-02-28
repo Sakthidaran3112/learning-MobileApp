@@ -1,6 +1,7 @@
 package com.example.chat_bot.Activities
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.KeyEvent
@@ -16,6 +17,7 @@ import androidx.core.text.HtmlCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.example.chat_bot.Activities.HomePage.HomeActivity
 import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
 
@@ -35,13 +37,13 @@ class IntroductionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_introduction)
 
         setupListeners()
-        setupLetsGoButton()
+
     }
 
 
     private fun setupListeners() {
         setupSkipButton()
-
+        setupLetsGoButton()
         setupSlideViewPager()
         setupIndicatorLayout()
         setupPageListener()
@@ -53,6 +55,7 @@ class IntroductionActivity : AppCompatActivity() {
 
         skipButton.setOnClickListener {
             slideViewPager.currentItem = viewPagerAdapter.count - 1
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
     }
 
@@ -60,7 +63,10 @@ class IntroductionActivity : AppCompatActivity() {
         letsGoButton = findViewById(R.id.lets_go_button)
         letsGoButton.visibility = GONE
         letsGoButton.setOnClickListener {
-            startActivity(Intent(this@IntroductionActivity, Register::class.java))
+            val intent = Intent(this@IntroductionActivity, Register::class.java)
+            startActivity(intent)
+            finish()
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
     }
 
@@ -129,8 +135,17 @@ class IntroductionActivity : AppCompatActivity() {
             val intent = Intent(this@IntroductionActivity, WelcomePage::class.java)
             startActivity(intent)
             finish()
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
         return super.onKeyDown(keyCode, event)
+    }
+
+    private fun goToLoginActivity() {
+        val intent = Intent(this@IntroductionActivity, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
+
+
     }
 
 }

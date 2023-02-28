@@ -536,6 +536,7 @@ class Register : AppCompatActivity() {
 
         alreadyUserbtn.setOnClickListener {
             startActivity(Intent(this, Login::class.java))
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
     }
 
@@ -543,6 +544,7 @@ class Register : AppCompatActivity() {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             val intent = Intent(this@Register, WelcomePage::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
         return super.onKeyDown(keyCode, event)
     }

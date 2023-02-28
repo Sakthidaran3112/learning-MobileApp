@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.chat_bot.Activities.HomePage.HomeActivity
@@ -29,6 +30,9 @@ class Splash : AppCompatActivity() {
             finish()
         }, splashDuration)
 
+
+
+
     }
 
     private fun handleNavigationByAuthentication() {
@@ -50,6 +54,8 @@ class Splash : AppCompatActivity() {
 
     private fun navigateToWelcomePage() {
         startActivity(Intent(this, WelcomePage::class.java))
+
+//        overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
     }
 }
 

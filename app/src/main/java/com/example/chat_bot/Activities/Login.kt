@@ -108,8 +108,7 @@ class Login : AppCompatActivity() {
         }
 
         binding.registerTv.setOnClickListener { register() }
-        // var conn: InternetConnection = fal
-        // conn.isOnline(this)
+
         getDevID()
 
     }
@@ -125,6 +124,7 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, Register::class.java)
             startActivity(intent)
             finish()
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
         else
         {
@@ -252,6 +252,7 @@ class Login : AppCompatActivity() {
             .setData(Uri.parse("success"))
         startActivity(intent)
         finish()
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         session.createLoginSession(user_name, m_androidId.toString())
 //               session.save_details(user_age, user_grade)
         session.save_materialLangPref(materialLanguage)
@@ -332,6 +333,7 @@ class Login : AppCompatActivity() {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             val intent = Intent(this@Login, WelcomePage::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
         return super.onKeyDown(keyCode, event)
     }

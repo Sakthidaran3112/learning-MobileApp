@@ -20,6 +20,7 @@ class Seedsinfo : AppCompatActivity() {
             val intent = Intent (this, WelcomePage::class.java)
             startActivity(intent)
             finish()
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
 
 
@@ -30,6 +31,7 @@ class Seedsinfo : AppCompatActivity() {
             val intent = Intent(this@Seedsinfo, WelcomePage::class.java)
             startActivity(intent)
             finish()
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
         return super.onKeyDown(keyCode, event)
     }

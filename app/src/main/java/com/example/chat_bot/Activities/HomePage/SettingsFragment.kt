@@ -240,6 +240,7 @@ class SettingsFragment : Fragment() {
     private fun handleClicks() {
         session.logoutUser()
         (context as Activity).finish()
+
     }
 
     fun alertbox_accessCode()
