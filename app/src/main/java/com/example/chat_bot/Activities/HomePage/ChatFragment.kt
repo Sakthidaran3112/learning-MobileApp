@@ -39,10 +39,10 @@ import com.example.chat_bot.data.*
 import com.example.chat_bot.data.tryy.AllQuestion
 import com.example.chat_bot.data.tryy.QuestItem
 import com.example.chat_bot.databinding.FragmentChatBinding
+import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSApi
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSRepository
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSViewModel
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSViewModelFact
-import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSApi
 import com.example.chat_bot.ui.quiz_adapter
 import com.example.chat_bot.utils.*
 import com.yariksoffice.lingver.Lingver
@@ -160,8 +160,11 @@ class ChatFragment : Fragment(), msgAdapter.Callbackinter, quiz_adapter.Callback
         isOnline(context as Activity)
 
 
-
-
+//        val fragment: Fragment = ChatFragment()
+//        childFragmentManager.beginTransaction()
+//            .replace(com.example.chat_bot.R.id.fragment_container, fragment)
+//            .addToBackStack(null)
+//            .commit()
 
 
         binding = FragmentChatBinding.inflate (layoutInflater,container,false)

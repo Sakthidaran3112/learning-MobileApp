@@ -1,6 +1,5 @@
 package com.example.chat_bot.Ac
 
-import com.example.chat_bot.Activities.HomePage.HomeActivity
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
@@ -8,15 +7,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import androidx.fragment.app.Fragment
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.chat_bot.Activities.HomePage.ChatFragment
+import com.example.chat_bot.Activities.HomePage.HomeActivity
 import com.example.chat_bot.Activities.acivity.downloadQuizActivity
 import com.example.chat_bot.Activities.acivity.quiz_home
 import com.example.chat_bot.R
@@ -45,6 +47,8 @@ class SettingsFragment : Fragment() {
 
 
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -54,6 +58,7 @@ class SettingsFragment : Fragment() {
         var user = session.getUserDetails()
 
         userename = user.get("name").toString()
+
 
        bind = FragmentSettingsBinding.inflate(layoutInflater, container, false)
         // Inflate the layout for this fragment
@@ -105,6 +110,11 @@ class SettingsFragment : Fragment() {
         return bind.root
 
     }
+
+
+
+
+
 
     @SuppressLint("HardwareIds")
     private fun getDevID() {
@@ -386,6 +396,7 @@ class SettingsFragment : Fragment() {
         builder.show()
                          }
 
+
     private fun UpdateMaterialLang(language: String) {
         val dao: SeedsDao = SeedsDatabase.getInstance(context as Activity).seedsDao
         lifecycleScope.launch (Dispatchers.IO){
@@ -394,5 +405,6 @@ class SettingsFragment : Fragment() {
 
         }
     }
+
 
 }

@@ -24,4 +24,5 @@ class PagerAdapter(fragmentAtctivity: FragmentActivity) : FragmentStateAdapter(f
 
 
 
+
 }

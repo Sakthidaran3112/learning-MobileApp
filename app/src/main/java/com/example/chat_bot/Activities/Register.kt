@@ -572,5 +572,17 @@ class Register : AppCompatActivity() {
             foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
         }
 
+        binding.ageBtnBox?.setOnClickListener {
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
+        binding.classBtnBox?.setOnClickListener {
+            binding.usernameEt.clearFocus()
+            val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
+        }
     }
 }

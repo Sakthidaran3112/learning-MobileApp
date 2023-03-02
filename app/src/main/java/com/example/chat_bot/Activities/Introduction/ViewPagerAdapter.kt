@@ -1,13 +1,17 @@
 package com.example.chat_bot.Activities
 
 import android.content.Context
+import android.content.Intent
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.viewpager.widget.PagerAdapter
+import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
 
 class ViewPagerAdapter(var context: Context) : PagerAdapter() {
@@ -55,4 +59,5 @@ class ViewPagerAdapter(var context: Context) : PagerAdapter() {
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         container.removeView(`object` as LinearLayout)
     }
+
 }

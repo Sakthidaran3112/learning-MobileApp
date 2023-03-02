@@ -18,7 +18,7 @@
     <string name="accessCode">Hast du ein Zugangskennwort?</string>
     <string name="accessCode_Dialog_text">Zugangskennwort eingeben</string>
     <string name="select_age">Alter wählen</string>
-    <string name="accessCodehere">Zugangskennwort</string>
+    <string name="accessCodehere">Code hier</string>
     <string name="Done">Fertig</string>
     <string name="age_drop_down_text">Dein Alter</string>
     <string name="mcq_positive_congratulations">Glückwunsch</string>
@@ -40,6 +40,7 @@
     <string name="Downloaded_Materials">Heruntergeladene Materialien</string>
     <string name="Setting_changeMateriallanguage">"Sprache das Lernmaterials "</string>
     <string name="Select_material_language">Sprache das Lernmaterials auswählen</string>
+    <string name="Download">Herunterladen</string>
     <string name="no_downloads_available">Keine heruntergeladenen Materialien verfügbar!!</string>
     <string name="Already_have_an_account">Haben Sie schon ein Konto?</string>
     <string name="True">Richtig</string>
@@ -49,13 +50,25 @@
     <string name="English">Englisch</string>
     <string name="Greek">Griechisch</string>
     <string name="Choose_an_answer">Wählen Sie eine Antwort</string>
+    <string name="your_score">Ihr Ergebnis:</string>
     <string name="Setting_Contact_us_dialog_title">Team kontaktieren</string>
+    <string name="close">Schließen</string>
     <string name="contact_team_text">Sie können uns über unsere E-Mail kontaktieren: seeds.members@listserv.dfn.de</string>
     <string name="GET_STARTED">Loslegen</string>
     <string name="Already_User">Bereits Benutzer</string>
     <string name="what_is_seeds">Was ist SEEDS?</string>
     <string name="Languages">Sprachen</string>
+    <string name="heading_one">Lernende Anwendung</string>
+    <string name="heading_three">Übungen und Materialien zum Herunterladen</string>
+    <string name="heading_fourth">Aktivitäten</string>
+    <string name="desc_one">Eine interaktive Lernanwendung auf der Basis eines Chatbots, die es Schülern ermöglicht, mit ihren Android-Geräten zu lernen</string>
+    <string name="desc_two">Kommunizieren Sie mit dem Chatbot, um Ihre gewünschten Themen und mehr zu finden</string>
+    <string name="desc_three">Machen Sie einige Übungen zu Ihren Lieblingsthemen und laden Sie auch Materialien zum späteren Nachschlagen herunter</string>
+    <string name="desc_fourth">Überprüfen Sie jederzeit Ihre Aktivitäten, um motiviert zu bleiben</string>
+    <string name="welcome2">WILLKOMMEN</string>
     <string name="lets_go">LOS GEHT\'S</string>
     <string name="skip">Überspringen</string>
+    <string name="seeds_info">SEEDS ist ein Projekt zur Unterstützung von Lernen und Bildung am Rande der digitalen Sphäre. Aufgrund des fehlenden Zugangs zu Bildungseinrichtungen und der geringen oder fehlenden Ausstattung (Tablets oder Laptops und PCs) mit den notwendigen digitalen Technologien haben junge Menschen Schwierigkeiten, dem Unterricht zu folgen. IKT und vor allem das Smartphone können hier eingesetzt werden, um dieses Defizit abzumildern. Dabei müssen die Bedürfnisse und Herausforderungen der Zielgruppe berücksichtigt werden (d.h. keine aktuellen Smartphones mit veralteter Software). Unsere Idee ist es, mit Hilfe von Chatbots Lerninhalte auf eine neue Art und Weise an gefährdete Menschen zu vermitteln.</string>
     <string name="login_existing_account">Bereits ein Benutzer? Hier anmelden.</string>
+    <string name="create_account">Konto erstellen</string>
 </resources>

@@ -140,12 +140,5 @@ class IntroductionActivity : AppCompatActivity() {
         return super.onKeyDown(keyCode, event)
     }
 
-    private fun goToLoginActivity() {
-        val intent = Intent(this@IntroductionActivity, HomeActivity::class.java)
-        startActivity(intent)
-        finish()
-
-
-    }
 
 }

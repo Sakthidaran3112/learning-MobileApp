@@ -44,7 +44,7 @@
     <string name="Username">Username</string>
     <string name="accessCode">Do you have an access code?</string>
     <string name="accessCode_Dialog_text">Enter access code</string>
-    <string name="accessCodehere" translatable="false">code here</string>
+    <string name="accessCodehere" translatable="false">Code here</string>
     <string name="Done">Done</string>
     <string name="messageEdittext_hint">Type a message...</string>
     <string name="sendBTN_txt">Send</string>
@@ -78,7 +78,7 @@
     <string name="Choose_an_answer">Choose an answer</string>
     <string name="your_score">Your score:</string>
     <string name="Setting_Contact_us_dialog_title">Contact team</string>
-    <string name="close">close</string>
+    <string name="close">Close</string>
     <string name="contact_team_text">You can contact us using our email: seeds.members@listserv.dfn.de</string>
     <string name="GET_STARTED">GET STARTED</string>
     <string name="Already_User">ALREADY USER</string>
