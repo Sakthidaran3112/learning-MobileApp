@@ -20,11 +20,14 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chat_bot.Activities.QuizActivity
@@ -128,10 +131,10 @@ class ChatFragment : Fragment(), msgAdapter.Callbackinter, quiz_adapter.Callback
 
 
 
-    // private var adapter: RecyclerView.Adapter<msgAdapter.msgViewholder>? = null
 
 
-    @RequiresApi(Build.VERSION_CODES.M)
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -174,9 +177,19 @@ class ChatFragment : Fragment(), msgAdapter.Callbackinter, quiz_adapter.Callback
         binding.rvMessages.layoutManager = LinearLayoutManager(this.requireContext())
        // binding.rvMessages.hasFixedSize()
 
-        // Inflate the layoult for this fragment
+        binding.rvMessages.setOnClickListener{
+            binding.etMessage.clearFocus()
+            val foc = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+            foc.hideSoftInputFromWindow(binding.etMessage.windowToken, 0)
+        }
+
+
+
         return binding.root
     }
+
+
 
     private fun toLowercase() {
         var trueGreek = "ψευδές".lowercase()

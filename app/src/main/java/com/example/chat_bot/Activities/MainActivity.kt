@@ -1,13 +1,23 @@
 package com.example.chat_bot.Activities
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
+import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.chat_bot.Activities.HomePage.ChatFragment
+//import com.example.chat_bot.Manifest
+import com.example.chat_bot.R
 import com.example.chat_bot.Rasa.rasaMsg.BotResponse
 import com.example.chat_bot.data.Message
 import com.example.chat_bot.data.Topics
@@ -20,13 +30,14 @@ import com.example.chat_bot.utils.Constants.RCV_ID
 import com.example.chat_bot.utils.Time.timeStamp
 import kotlinx.coroutines.*
 
-
 class MainActivity : AppCompatActivity(), msgAdapter.Callbackinter{
 
     private lateinit var adapter: msgAdapter
     private val TAG = "MyActivity"
     private lateinit var binding: ActivityMainBinding
     var msgBtn: List<com.example.chat_bot.Rasa.rasaMsg.Button> = arrayListOf()
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +47,7 @@ class MainActivity : AppCompatActivity(), msgAdapter.Callbackinter{
         val view = binding.root
         setContentView(view)
 
+
         recyclerView()
         clickEvents()
         customMsg("Hello, Seeds Asssitant here!!, How may i help you?")
@@ -44,6 +56,7 @@ class MainActivity : AppCompatActivity(), msgAdapter.Callbackinter{
 
 
     }
+
 
     override fun onStart() {
         super.onStart()
@@ -144,5 +157,7 @@ class MainActivity : AppCompatActivity(), msgAdapter.Callbackinter{
     override fun passResultCallback(message: Topics) {
         TODO("Not yet implemented")
     }
+
+
 }
 

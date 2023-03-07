@@ -200,7 +200,7 @@ class Register : AppCompatActivity() {
     private fun setlang() {
         // access the items of the list
         val languages = resources.getStringArray(R.array.Languages)
-        val countries = resources.getStringArray(R.array.Countries)
+
 
         // access the language spinner
         val lang_spinner = binding.langBtnn

@@ -14,14 +14,16 @@ import com.example.chat_bot.R
 import com.example.chat_bot.utils.SessionManager
 
 class Splash : AppCompatActivity() {
+
     private lateinit var session: SessionManager
 
     private val splashDuration: Long = 2000
     private val splashHandler = Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
+        super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_splash)
         session = SessionManager(applicationContext)
 

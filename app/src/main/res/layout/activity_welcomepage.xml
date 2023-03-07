@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Activities.WelcomePage.Welcome_page"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
 
 
@@ -130,7 +132,9 @@
                 android:layout_weight="1"
                 android:inputType="none"
                 android:text="@string/select_language"
-                android:textSize="11sp" />
+                android:textSize="11sp"
+
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 

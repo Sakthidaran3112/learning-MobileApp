@@ -53,7 +53,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="-3dp"
         tools:itemCount="2"
-        tools:listitem="@layout/message_item" />
+        tools:listitem="@layout/message_item"
+        />
 
     <View
         android:layout_width="match_parent"

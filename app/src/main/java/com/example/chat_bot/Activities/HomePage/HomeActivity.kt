@@ -7,8 +7,10 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.os.PersistableBundle
 import android.view.KeyEvent
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
@@ -25,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager2: ViewPager2
     private lateinit var session: SessionManager
+    val fragmentManager = supportFragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
@@ -49,8 +52,16 @@ class HomeActivity : AppCompatActivity() {
         }.attach()
 
 
+
     }
 
+    fun firstfragment(){
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.ll_layout_bar, ChatFragment())
+        fragmentTransaction.addToBackStack("")
+        fragmentTransaction.commit()
+
+    }
 
     private fun checksavedlangpref(){
 
@@ -64,10 +75,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-           moveTaskToBack(true)
-        }
-        return super.onKeyDown(keyCode, event)
-    }
+
+
+
 }

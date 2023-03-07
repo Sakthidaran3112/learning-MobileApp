@@ -1,21 +1,20 @@
 package com.example.chat_bot.Activities.Welcomepage
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AnimationUtils
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.inputmethod.InputMethodManager
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatSpinner
 import androidx.databinding.DataBindingUtil.setContentView
 import com.example.chat_bot.Activities.IntroductionActivity
 import com.example.chat_bot.Activities.Login
 import com.example.chat_bot.R
 import com.example.chat_bot.databinding.ActivityWelcomepageBinding
 import com.example.chat_bot.utils.SessionManager
-import com.google.android.material.textfield.TextInputLayout
 import com.yariksoffice.lingver.Lingver
 
 
@@ -59,7 +58,10 @@ class WelcomePage : AppCompatActivity() {
         session = SessionManager(applicationContext)
         user_language = ""
 
+
+
     }
+
 
 
     private fun setlang() {
@@ -68,6 +70,7 @@ class WelcomePage : AppCompatActivity() {
 
         // access the language spinner
         val lang_spinner = binding.langBtnn
+        lang_spinner.dismissDropDown()
         if (lang_spinner != null) {
             val adapter = ArrayAdapter(this,
                 R.layout.lang_dropdown, languages)
@@ -76,13 +79,16 @@ class WelcomePage : AppCompatActivity() {
                 AdapterView.OnItemClickListener { parent, view, position, id ->
 
                     user_language = languages[position]
-
                     lang(languages[position], adapter)
 
 
                 }
 
+
+
+
         }
+
     }
 
     private fun setupViews() {
@@ -169,7 +175,10 @@ class WelcomePage : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         setlang()
+
+
     }
+
 
 
 }

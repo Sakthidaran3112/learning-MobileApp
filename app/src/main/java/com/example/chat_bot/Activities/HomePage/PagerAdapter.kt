@@ -4,8 +4,10 @@ import android.content.res.Resources
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.chat_bot.Ac.SettingsFragment
+import com.example.chat_bot.Activities.ViewPagerAdapter
 
 class PagerAdapter(fragmentAtctivity: FragmentActivity) : FragmentStateAdapter(fragmentAtctivity) {
     override fun getItemCount() = 3
@@ -21,7 +23,6 @@ class PagerAdapter(fragmentAtctivity: FragmentActivity) : FragmentStateAdapter(f
         }
 
     }
-
 
 
 
