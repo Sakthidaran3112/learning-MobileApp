@@ -10,13 +10,11 @@ import android.provider.Settings.Secure
 import android.provider.Settings.Secure.ANDROID_ID
 import android.util.Log
 import android.view.KeyEvent
-import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.chat_bot.Activities.HomePage.HomeActivity
@@ -338,5 +336,8 @@ class Login : AppCompatActivity() {
         return super.onKeyDown(keyCode, event)
     }
 
+
 }
+
+
 

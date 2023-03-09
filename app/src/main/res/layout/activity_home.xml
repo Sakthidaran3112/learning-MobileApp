@@ -20,11 +20,11 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabGravity="center"
-        app:tabIndicatorAnimationMode="elastic"
+        app:tabGravity="fill"
+        app:tabIndicatorAnimationMode="fade"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/white"
-        app:tabTextAppearance="@style/Tablayout"
+        app:tabTextAppearance="@style/MineCustomTabText"
         app:tabTextColor="@color/seed_dark_blue" />
 
     <androidx.viewpager2.widget.ViewPager2

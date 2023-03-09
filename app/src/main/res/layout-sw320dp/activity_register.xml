@@ -104,7 +104,9 @@
                 android:layout_height="58dp"
                 android:layout_gravity="center"
                 android:hint="@string/username_register"
-                android:textColor="@android:color/black">
+                android:textColor="@android:color/black"
+                android:singleLine="true"
+                android:imeOptions="actionDone">
 
             </EditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -117,7 +119,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:alpha="0.7"
-            android:hint="@string/age_drop_down_text"
             android:textColorHint="@color/black"
             app:boxBackgroundColor="@color/background"
             app:boxStrokeColor="@android:color/darker_gray"
@@ -129,6 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
+                android:hint="@string/age_drop_down_text"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 

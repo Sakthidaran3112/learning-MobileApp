@@ -160,6 +160,7 @@ class Register : AppCompatActivity() {
         alreadyUserLogin()
         keyboardfocus()
 
+
     }
 
     fun View.hideKeyboard() {
@@ -172,7 +173,6 @@ class Register : AppCompatActivity() {
 
         // access the items of the list
         val languages = resources.getStringArray(R.array.Languages)
-        val countries = resources.getStringArray(R.array.Countries)
 
         // access the language spinner
         val lang_spinner = binding.materiallangBtn
@@ -217,6 +217,7 @@ class Register : AppCompatActivity() {
 
                 user_language = languages[position]
                 lang(languages[position],adapter)
+
             }
 
         }
@@ -226,6 +227,7 @@ class Register : AppCompatActivity() {
         super.onResume()
         setlang()
         setMateriallang()
+
 
     }
 
@@ -249,8 +251,6 @@ class Register : AppCompatActivity() {
     }
 
     private fun setAGEGROUPS(it: MutableList<String>) {
-        // access the items of the list
-        val garde = resources.getStringArray(R.array.grades)
 
         // access the language spinner
         val age_spinner = binding.ageBtn
@@ -377,7 +377,6 @@ class Register : AppCompatActivity() {
         checkInternet()
         if(session.isLoggedIn())
         {
-           // Toast.makeText(this, session.getlanguagePref(), Toast.LENGTH_SHORT).show()
             Log.d("details",session.getUserDetails().toString())
             val intent = Intent(this, HomeActivity::class.java)
                 .setAction(Intent.ACTION_VIEW)
@@ -387,6 +386,7 @@ class Register : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
 
     }
 
@@ -413,29 +413,9 @@ class Register : AppCompatActivity() {
         }
     }
 
-    private fun doAuthentication() {
-        if (binding.usernameEt.text == null || user_name == "")
-        {
-            Toast.makeText(applicationContext, "Username required", Toast.LENGTH_SHORT).show()
-        }
-        else if (binding.ageBtn.text == null || user_age == "")
-        {
-            Toast.makeText(applicationContext, "age required", Toast.LENGTH_SHORT).show()
-        }
-         else if (binding.classBtn.text == null || user_grade == "")
-        {
-            Toast.makeText(applicationContext, "grade required", Toast.LENGTH_SHORT).show()
-        }
-        else if (binding.langBtnn.text == null || user_language == "")
-        {
-            Toast.makeText(applicationContext, "language required", Toast.LENGTH_SHORT).show()
-        }
-        else
-        {
-           // dologin()
-        }
 
-    }
+
+
     private fun dologin() {
         if (isOnline(applicationContext))
         {
@@ -455,11 +435,21 @@ class Register : AppCompatActivity() {
             val user1 = User(user_name, user_age,  user_country,  user_grade, user_language, m_androidId.toString(), materialLang)
 
 
-            if (user_name.isBlank() || user_age.isBlank() || user_grade.isBlank() ||
-
-                user_language.isBlank() || materialLang.isBlank())
+            if (binding.usernameEt.text == null || user_name == "")
             {
-                Toast.makeText(applicationContext, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Username required", Toast.LENGTH_SHORT).show()
+            }
+            else if (binding.ageBtn.text == null || user_age == "")
+            {
+                Toast.makeText(applicationContext, "age required", Toast.LENGTH_SHORT).show()
+            }
+            else if (binding.classBtn.text == null || user_grade == "")
+            {
+                Toast.makeText(applicationContext, "grade required", Toast.LENGTH_SHORT).show()
+            }
+            else if (binding.langBtnn.text == null || user_language == "")
+            {
+                Toast.makeText(applicationContext, "language required", Toast.LENGTH_SHORT).show()
             }
             else
             {
@@ -491,10 +481,12 @@ class Register : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }
+
                     response.code()
                     response.body()
                 })
             }
+
         }
 
         else

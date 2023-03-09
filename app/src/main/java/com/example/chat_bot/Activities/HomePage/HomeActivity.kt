@@ -44,7 +44,7 @@ class HomeActivity : AppCompatActivity() {
             tab.text = when(index){
                 0 -> {"Chat"}
                 1 -> applicationContext.resources.getString(R.string.mainpage_ex_heading)
-                2 -> applicationContext.resources.getString(R.string.mainpage_settings_heading)
+                2 -> applicationContext.resources.getString(R.string.mainpage_Dashboard_heading)
                 else ->{throw Resources.NotFoundException("Position Not Found!!")}
             }
             //checksavedlangpref()

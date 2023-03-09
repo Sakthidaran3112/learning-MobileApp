@@ -68,7 +68,10 @@
                 android:layout_height="58dp"
                 android:layout_gravity="center"
                 android:hint="@string/Username"
-                android:textColor="@android:color/black">
+                android:textColor="@android:color/black"
+                android:singleLine="true"
+                android:imeOptions="actionGo"
+                android:inputType="text">
 
             </EditText>
         </com.google.android.material.textfield.TextInputLayout>

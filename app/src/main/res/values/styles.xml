@@ -31,4 +31,8 @@
     </style>
 
     <style name="Seeds">Seeds_app</style>
+
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>
