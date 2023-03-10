@@ -4,6 +4,7 @@
     <string name="splash_text">Lernen ist für alle</string>
     <string name="Register_btn">Anmeldung</string>
     <string name="username_register">Benutzername</string>
+    <string name="Grade_register">Klasse</string>
     <string name="create_password">Passwort</string>
     <string name="lang_drop_down_text">Sprache auswählen</string>
     <string name="lang_drop_down_label">Sprache</string>

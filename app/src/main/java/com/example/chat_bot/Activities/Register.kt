@@ -12,12 +12,12 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -29,10 +29,10 @@ import com.example.chat_bot.Room.SeedsDatabase
 import com.example.chat_bot.data.User
 import com.example.chat_bot.data.Userz
 import com.example.chat_bot.databinding.ActivityRegisterBinding
+import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSApi
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSRepository
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSViewModel
 import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSViewModelFact
-import com.example.chat_bot.networking.Retrofit.Seeds_api.api.SEEDSApi
 import com.example.chat_bot.utils.SessionManager
 import com.yariksoffice.lingver.Lingver
 import kotlinx.coroutines.launch
@@ -228,7 +228,6 @@ class Register : AppCompatActivity() {
         setlang()
         setMateriallang()
 
-
     }
 
 
@@ -265,7 +264,7 @@ class Register : AppCompatActivity() {
 
                 user_age = it[position]
                 adapter.notifyDataSetChanged()
-                //age_setter(age.get(position))
+
 
 
             }
@@ -322,6 +321,7 @@ class Register : AppCompatActivity() {
            // session.savelanguagePref(Lingver.getInstance().setLocale(this, "de").toString())
             recreate()
             adapter.notifyDataSetChanged()
+
 
 
         }
@@ -564,17 +564,22 @@ class Register : AppCompatActivity() {
             foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
         }
 
-        binding.ageBtnBox?.setOnClickListener {
+        binding.ageBtn?.setOnClickListener {
             binding.usernameEt.clearFocus()
             val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
             foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
         }
-        binding.classBtnBox?.setOnClickListener {
+        binding.classBtn?.setOnClickListener {
             binding.usernameEt.clearFocus()
             val foc = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
             foc.hideSoftInputFromWindow(binding.usernameEt.windowToken, 0)
         }
+    }
+    private fun restartActivity() {
+        val intent = intent
+        finish()
+        startActivity(intent)
     }
 }

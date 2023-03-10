@@ -48,12 +48,6 @@ class ExerciseFragment : Fragment() {
     }
 
     private fun recyclerView() {
-        //binding.rvMessages.apply {
-
-//        exerciseList.add(Exercise("Human anatomy", "6", "10"))
-//        exerciseList.add(Exercise("Human anatomy", "6", "10"))
-//        session.writeListInPref(context as Activity,exerciseList)
-
 
         binding.exRv.adapter = adapter
         binding.exRv.layoutManager = LinearLayoutManager(this.context)
@@ -72,12 +66,7 @@ class ExerciseFragment : Fragment() {
             adapter.notifyDataSetChanged()
             adapter.notifyItemInserted(exerciseList.size)
         } else
-            Toast.makeText(context as Activity, "No quiz attempted yet", Toast.LENGTH_SHORT).show()
-
-
-        //  Log.v(TAG, "ReCYCLE")
-
-        // }
+            false
 
     }
 

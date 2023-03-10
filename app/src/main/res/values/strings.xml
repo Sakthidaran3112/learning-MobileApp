@@ -82,7 +82,7 @@
     <string name="Already_User">ALREADY USER</string>
     <string name="what_is_seeds">What is SEEDS?</string>
     <string name="Languages">Languages</string>
-
+    <string name="Grade_register">Grade</string>
     <!--    Introduction screen -->
     //Headings
     <string name="heading_one">Learning Application</string>

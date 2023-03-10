@@ -47,35 +47,11 @@ class HomeActivity : AppCompatActivity() {
                 2 -> applicationContext.resources.getString(R.string.mainpage_Dashboard_heading)
                 else ->{throw Resources.NotFoundException("Position Not Found!!")}
             }
-            //checksavedlangpref()
 
         }.attach()
 
 
 
     }
-
-    fun firstfragment(){
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.ll_layout_bar, ChatFragment())
-        fragmentTransaction.addToBackStack("")
-        fragmentTransaction.commit()
-
-    }
-
-    private fun checksavedlangpref(){
-
-        if (session.getlanguagePref() == "")
-        {
-            val lang = Lingver.getInstance().getLanguage()
-            session.savelanguagePref(lang)
-           // Toast.makeText(this, lang, Toast.LENGTH_SHORT).show()
-        }
-        else Toast.makeText(this, session.getlanguagePref(), Toast.LENGTH_SHORT).show()
-    }
-
-
-
-
 
 }
