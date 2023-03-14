@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Seeds Chat &amp; Learn</string>
     <string name="Grade_register">Grado</string>
+    <string name="Hello">Hola</string>
     <string name="create_password">Contraseña</string>
     <string name="Register_btn">inscripción</string>
     <string name="username_register">Introduce el nombre de usuario de tu elección</string>

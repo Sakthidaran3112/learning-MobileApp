@@ -17,6 +17,7 @@
     <string name="splash_text">Η μάθηση είναι για όλες και όλους</string>
     <string name="splas_web" translatable="false">www.seeds.com</string>
     <string name="Grade_register">Βαθμός</string>
+    <string name="Hello">Γεια σας</string>
     <string name="create_password">Επιλέξτε κωδικό</string>
     <string name="Register_btn">Εγγραφή</string>
     <string name="username_register">Διάλεξε όνομα χρήστη</string>

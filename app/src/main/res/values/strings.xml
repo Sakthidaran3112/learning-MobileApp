@@ -110,6 +110,9 @@
     <string name="Access_code">Access Code</string>
     <string name="Settings">Settings</string>
     <string name="Help">Help</string>
+    <string name="Signout">Sign out</string>
+    <string name="Hello">Hello </string>
+
 
     <string-array name="Languages">
         <item>Deutsch</item>
