@@ -102,6 +102,14 @@
     <string name="login_existing_account">Already an User? Login here.</string>
     <string name="create_account">Create Account</string>
 
+    //Dashboard
+    <string name="Profile">Profile</string>
+    <string name="Learning_progress">Learning Progress</string>
+    <string name="Learning_cards">Learning Cards</string>
+    <string name="Download_materials">Download Materials</string>
+    <string name="Access_code">Access Code</string>
+    <string name="Settings">Settings</string>
+    <string name="Help">Help</string>
 
     <string-array name="Languages">
         <item>Deutsch</item>
