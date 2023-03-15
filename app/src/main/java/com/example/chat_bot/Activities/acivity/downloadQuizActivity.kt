@@ -3,12 +3,14 @@ package com.example.chat_bot.Activities.acivity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.transition.Transition
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.chat_bot.Ac.DashboardFragment
 import com.example.chat_bot.Activities.HomePage.HomeActivity
 import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
@@ -34,6 +36,7 @@ class downloadQuizActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDownloadQuizBinding.inflate(layoutInflater)
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
 
         session = SessionManager(this)
         recyclerView()
@@ -61,7 +64,7 @@ class downloadQuizActivity : AppCompatActivity() {
         lifecycleScope.launch{
 
          list =  dao.getMaterialsWithUsername(username)
-            list
+
 
             val user: List<UserAndMessage> = dao.getMessagesAndUserwithUsername(username)
             user
@@ -107,12 +110,4 @@ class downloadQuizActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this@downloadQuizActivity, HomeActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-        }
-        return super.onKeyDown(keyCode, event)
-    }
 }
