@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/sender_linear"
-        android:background="@drawable/interesting_facts_icon"
+        android:background="@drawable/education_tree"
+        android:alpha="0.1"
         >
 
         <TextView
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/send_bubble"
             android:padding="14dp"
+            android:layout_gravity="right"
             android:text="This is a sample message that will appear"
             android:textAppearance="@style/messageStyle"
             android:textColor="@android:color/white"

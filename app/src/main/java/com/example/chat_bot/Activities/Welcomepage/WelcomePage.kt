@@ -75,6 +75,7 @@ class WelcomePage : AppCompatActivity() {
             val adapter = ArrayAdapter(this,
                 R.layout.lang_dropdown, languages)
             lang_spinner.setAdapter(adapter)
+
             lang_spinner.onItemClickListener =
                 AdapterView.OnItemClickListener { parent, view, position, id ->
 
@@ -90,6 +91,8 @@ class WelcomePage : AppCompatActivity() {
         }
 
     }
+
+
 
     private fun setupViews() {
         setupAlreadyRegisteredUserButton()
@@ -175,6 +178,7 @@ class WelcomePage : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         setlang()
+
 
 
     }

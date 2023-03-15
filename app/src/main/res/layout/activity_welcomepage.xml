@@ -105,15 +105,12 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/langbtn_box"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/custom_button_language"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:hint="@string/Languages"
             android:textColorHint="@color/profile"
             app:boxStrokeColor="@color/light_blue_600"
@@ -123,7 +120,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:startIconDrawable="@drawable/language_icon"
-            app:startIconTint="@color/white">
+            app:startIconTint="@color/white"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
             <AutoCompleteTextView
                 android:id="@+id/langBtnn"

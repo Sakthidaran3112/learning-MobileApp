@@ -3,9 +3,12 @@
     <string name="app_name">Seeds Chat &amp; Learn</string>
     <string name="splash_text">Lernen ist für alle</string>
     <string name="Register_btn">Anmeldung</string>
-    <string name="username_register">Benutzername</string>
+    <string name="username_register">Geben Sie einen Benutzernamen ein</string>
     <string name="Grade_register">Klasse</string>
+    <string name="Learning_progress">Lernfortschritt</string>
+    <string name="Signout">Abmelden</string>
     <string name="Hello">Hallo</string>
+    <string name="press_back">Drücken Sie erneut zurück, um den Vorgang zu beenden</string>
     <string name="create_password">Passwort</string>
     <string name="lang_drop_down_text">Sprache auswählen</string>
     <string name="lang_drop_down_label">Sprache</string>
@@ -35,6 +38,7 @@
     <string name="Setting_changelanguage">Interfacesprache</string>
     <string name="mainpage_ex_heading">Aufgaben</string>
     <string name="mainpage_settings_heading">Einstellungen</string>
+    <string name="mainpage_Dashboard_heading">Dashboard</string>
     <string name="Accountlogin">Anmeldung zum Konto</string>
     <string name="Grade">Klasse</string>
     <string name="AccountRegister">Account registrieren</string>

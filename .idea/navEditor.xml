@@ -13,12 +13,17 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-432" />
-                            <option name="y" value="50" />
+                            <option name="x" value="60" />
+                            <option name="y" value="60" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_chatFragment_to_dashboardFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_chatFragment_to_exerciseFragment">
                               <value>
                                 <LayoutPositions />
@@ -29,35 +34,35 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="dashboardFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="418" />
+                            <option name="y" value="688" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="exerciseFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="1" />
-                            <option name="y" value="52" />
+                            <option name="x" value="554" />
+                            <option name="y" value="-12" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_exerciseFragment_to_settingsFragment">
+                            <entry key="action_exerciseFragment_to_dashboardFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
                           </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="settingsFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="331" />
-                            <option name="y" value="69" />
-                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

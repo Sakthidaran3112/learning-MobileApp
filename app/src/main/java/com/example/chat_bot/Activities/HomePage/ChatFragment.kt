@@ -1,6 +1,7 @@
 package com.example.chat_bot.Activities.HomePage
 
 import Quest
+
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentValues
@@ -8,7 +9,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.provider.Settings
@@ -20,6 +20,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -29,6 +30,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.chat_bot.Activities.QuizActivity
 import com.example.chat_bot.Activities.acivity.OpenEnded
 import com.example.chat_bot.R
+
 import com.example.chat_bot.Rasa.Networkings.*
 import com.example.chat_bot.Rasa.rasaMsg.BotResponse
 import com.example.chat_bot.Rasa.rasaMsg.UserMessage
@@ -174,6 +176,7 @@ class ChatFragment : Fragment(), msgAdapter.Callbackinter, quiz_adapter.Callback
 
             foc.hideSoftInputFromWindow(binding.etMessage.windowToken, 0)
         }
+
 
 
 
@@ -1980,6 +1983,7 @@ class ChatFragment : Fragment(), msgAdapter.Callbackinter, quiz_adapter.Callback
 
         }
     }
+
 
 }
 

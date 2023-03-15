@@ -15,14 +15,14 @@
     <string name="splash_text">Learning is for everyone</string>
     <string name="splas_web" translatable="false">www.seeds.com</string>
     <string name="Register_btn">Register</string>
-    <string name="username_register">Type any username of your choice</string>
+    <string name="username_register">Type a username</string>
     <string name="lang_drop_down_label">Languages</string>
     <string name="lang_drop_down_text">Select language</string>
     <string name="register_account">Create an account?</string>
     <string name="Setting_Feedback">Feedback</string>
     <string name="Setting_Contact">Contact us</string>
     <string name="Setting_Terms_of_use">Terms of use</string>
-    <string name="settings_powerd_by" translatable="false">Powered by seeds</string>
+    <string name="settings_powerd_by" translatable="false">Powered by SEEDS</string>
     <string name="Setting_logout">Sign Out</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="mcq_positive_feedback" translatable="false">Results</string>
@@ -110,8 +110,12 @@
     <string name="Access_code">Access Code</string>
     <string name="Settings">Settings</string>
     <string name="Help">Help</string>
-    <string name="Signout">Sign out</string>
+    <string name="Signout">Sign Out</string>
     <string name="Hello">Hello </string>
+
+
+    //Home Activity
+    <string name="press_back">Press back again to exit</string>
 
 
     <string-array name="Languages">

@@ -17,17 +17,20 @@
     <string name="splash_text">Η μάθηση είναι για όλες και όλους</string>
     <string name="splas_web" translatable="false">www.seeds.com</string>
     <string name="Grade_register">Βαθμός</string>
+    <string name="Learning_progress">Πρόοδος μάθησης</string>
+    <string name="Signout">Υπογράψτε έξω</string>
     <string name="Hello">Γεια σας</string>
+    <string name="press_back">Πιέστε ξανά back για έξοδο</string>
     <string name="create_password">Επιλέξτε κωδικό</string>
     <string name="Register_btn">Εγγραφή</string>
-    <string name="username_register">Διάλεξε όνομα χρήστη</string>
+    <string name="username_register">Πληκτρολογήστε ένα όνομα χρήστη</string>
     <string name="lang_drop_down_label">γλώσσες</string>
     <string name="lang_drop_down_text">Επιλογή γλώσσας</string>
     <string name="register_account">Δημιούργησε έναν λογαριασμό</string>
     <string name="Setting_Feedback">Αξιολόγηση</string>
     <string name="Setting_Contact">Επικοινώνησε μαζί μας</string>
     <string name="Setting_Terms_of_use">Όροι Χρήσης</string>
-    <string name="settings_powerd_by" translatable="false">Powered by seeds</string>
+    <string name="settings_powerd_by" translatable="false">Powered by SEEDS</string>
     <string name="Setting_logout">Αποσύνδεση</string>
     <string name="hello_blank_fragment" translatable="false">Γειά σου blank fragment</string>
     <string name="mcq_positive_feedback" translatable="false">Αποτελέσματα</string>
@@ -55,6 +58,7 @@
     <string name="Setting_changelanguage">Επιλογή γλώσσας</string>
     <string name="mainpage_ex_heading">Ασκήσεις</string>
     <string name="mainpage_settings_heading">Ρυθμίσεις</string>
+    <string name="mainpage_Dashboard_heading">Ταμπλό</string>
     <string name="Accountlogin">Σύνδεση Λογαριασμού</string>
     <string name="Grade">Κλάση</string>
     <string name="Returntochat">Πίσω</string>

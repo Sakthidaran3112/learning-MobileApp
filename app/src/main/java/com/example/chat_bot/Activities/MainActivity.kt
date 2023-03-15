@@ -14,6 +14,8 @@ import android.view.inputmethod.InputMethodManager
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chat_bot.Activities.HomePage.ChatFragment
 //import com.example.chat_bot.Manifest
@@ -54,6 +56,8 @@ class MainActivity : AppCompatActivity(), msgAdapter.Callbackinter{
 
         Log.v(TAG, "In main")
 
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
+        navHostFragment.findNavController()
 
     }
 

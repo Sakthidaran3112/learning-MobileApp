@@ -13,9 +13,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.compose.ui.text.capitalize
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.chat_bot.Activities.HomePage.ChatFragment
 import com.example.chat_bot.Activities.HomePage.HomeActivity
 import com.example.chat_bot.Activities.acivity.downloadQuizActivity
 import com.example.chat_bot.Activities.acivity.quiz_home
@@ -42,8 +44,6 @@ class DashboardFragment : Fragment() {
     private val USER = "M-f8f2e818-808f-"
     lateinit var userename: String
     var pref_material_language: String = ""
-
-
 
 
 
@@ -179,7 +179,7 @@ class DashboardFragment : Fragment() {
         Log.d("SettingsFragment", "materialLang: $materialLang")
 //        bind.profilematerialLang.text = materialLang
 //        bind.profileUserage.text = age
-        bind.profileUsername.text= getString(R.string.Hello) + name?.capitalize() + ","
+        bind.profileUsername.text= getString(R.string.Hello) + " " +name?.capitalize() + ","
 //        bind.profilegrade.text= grade
 //
 //        bind.materialLanguage?.text = materialLang
@@ -193,9 +193,9 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-//        bind.accessCodeTv.setOnClickListener{
-//            alertbox_accessCode()
-//        }
+        bind.accessCodeIcon.setOnClickListener{
+            alertbox_accessCode()
+        }
 //
 //        bind.materialLanguageTv.setOnClickListener { alertbox_materiallanguage()
 //
@@ -209,8 +209,10 @@ class DashboardFragment : Fragment() {
 //
 //        bind.contactTv.setOnClickListener { open_Contact_dialog() }
 //
-//        bind.downloadTV.setOnClickListener { showDownload() }
+        bind.downloadIcon.setOnClickListener { showDownload() }
 //      //  handle_clicks()
+
+
     }
 
     private fun open_Contact_dialog() {
@@ -231,7 +233,6 @@ class DashboardFragment : Fragment() {
 
     private fun showDownload() {
         val intent = Intent(context, downloadQuizActivity::class.java).apply {
-
 
         }
         startActivity(intent)
@@ -405,8 +406,9 @@ class DashboardFragment : Fragment() {
         }
     }
 
-
-
+    fun onBackpressed(){
+        findNavController().navigate(R.id.action_dashboardFragment_to_chatFragment2)
+    }
 
     }
 

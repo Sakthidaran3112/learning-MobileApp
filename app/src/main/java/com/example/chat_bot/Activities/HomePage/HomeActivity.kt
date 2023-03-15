@@ -1,24 +1,14 @@
 package com.example.chat_bot.Activities.HomePage
-import android.app.Activity
-import android.content.Intent
 import android.content.res.Resources
-import android.net.http.SslCertificate.restoreState
 import android.os.Bundle
-import android.os.Parcelable
-import android.os.PersistableBundle
-import android.view.KeyEvent
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.R
 import com.example.chat_bot.databinding.ActivityHomeBinding
 import com.example.chat_bot.utils.SessionManager
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.yariksoffice.lingver.Lingver
 
 
 class HomeActivity : AppCompatActivity() {
@@ -28,6 +18,8 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var viewPager2: ViewPager2
     private lateinit var session: SessionManager
     val fragmentManager = supportFragmentManager
+    private var backPressedTime: Long = 0
+    private var backToast: Toast? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
@@ -53,5 +45,28 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast?.cancel()
+            super.onBackPressed()
+            return
+        } else {
+            backToast = Toast.makeText(baseContext, getString(R.string.press_back), Toast.LENGTH_SHORT)
+            backToast?.show()
+        }
+        backPressedTime = System.currentTimeMillis()
+    }
+
+//    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK) {
+//            val intent = Intent(this@HomeActivity, HomeActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
+//        return super.onKeyDown(keyCode, event)
+//    }
+
+
 
 }
