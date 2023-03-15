@@ -35,4 +35,17 @@
     <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">18sp</item>
     </style>
+
+
+    //Dialog box
+
+    <style name="PauseDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+    </style>
+
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/flip_in</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
 </resources>
