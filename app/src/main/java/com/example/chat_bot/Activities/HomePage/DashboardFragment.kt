@@ -13,11 +13,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import com.example.chat_bot.Activities.HomePage.ChatFragment
 import com.example.chat_bot.Activities.HomePage.HomeActivity
 import com.example.chat_bot.Activities.acivity.downloadQuizActivity
 import com.example.chat_bot.Activities.acivity.quiz_home
@@ -39,12 +36,11 @@ class DashboardFragment : Fragment() {
     private lateinit var bind: FragmentDashboardBinding
     lateinit var session: SessionManager
     var appmode: AppMode? = null
-    lateinit var lang:Language
-    var m_androidId: String ?= null
+    lateinit var lang: Language
+    var m_androidId: String? = null
     private val USER = "M-f8f2e818-808f-"
     lateinit var userename: String
     var pref_material_language: String = ""
-
 
 
     override fun onCreateView(
@@ -58,18 +54,17 @@ class DashboardFragment : Fragment() {
         userename = user.get("name").toString()
 
 
-       bind = FragmentDashboardBinding.inflate(layoutInflater, container, false)
+        bind = FragmentDashboardBinding.inflate(layoutInflater, container, false)
         // Inflate the layout for this fragment
 
-       // bind.editUserDetails.setOnClickListener { EditUserDetails() }
-
+        // bind.editUserDetails.setOnClickListener { EditUserDetails() }
 
 
 //        bind.materialLanguage.visibility = View.VISIBLE
         showUserProfile()
 //
 //
-        bind.signoutTv.setOnClickListener{handleClicks()}
+        bind.signoutTv.setOnClickListener { handleClicks() }
 
 //        if (session.getSwitch())
 //        {
@@ -105,19 +100,18 @@ class DashboardFragment : Fragment() {
 //
 //        }
 
+
         return bind.root
 
 
     }
 
 
-
-
-
     @SuppressLint("HardwareIds")
     private fun getDevID() {
-        m_androidId = Settings.Secure.getString(requireContext().contentResolver, Settings.Secure.ANDROID_ID)
-        m_androidId =  "$m_androidId/" + UUID.randomUUID().toString()
+        m_androidId =
+            Settings.Secure.getString(requireContext().contentResolver, Settings.Secure.ANDROID_ID)
+        m_androidId = "$m_androidId/" + UUID.randomUUID().toString()
         //Toast.makeText(this, m_androidId.toString(), Toast.LENGTH_SHORT).show()
         Log.d("dev_id", "Device ID: $m_androidId")
     }
@@ -165,36 +159,37 @@ class DashboardFragment : Fragment() {
         val user = session.getUserDetails()
 
 
-
         val age = user["age"]
-       println(age)
+        println(age)
         val name = user["name"]
         val grade = user["grade"]
 
-        val materialLang = user[ "KEY_materialLang"]
+        val materialLang = user["KEY_materialLang"]
 
-        Log.d("SettingsFragment", "age: $age")
-        Log.d("SettingsFragment", "name: $name")
-        Log.d("SettingsFragment", "grade: $grade")
-        Log.d("SettingsFragment", "materialLang: $materialLang")
+        Log.d("DashboardFragment", "age: $age")
+        Log.d("DashboardFragment", "name: $name")
+        Log.d("DashboardFragment", "grade: $grade")
+        Log.d("DashboardFragment", "materialLang: $materialLang")
 //        bind.profilematerialLang.text = materialLang
 //        bind.profileUserage.text = age
-        bind.profileUsername.text= getString(R.string.Hello) + " " +name?.capitalize() + ","
+        bind.profileUsername.text = getString(R.string.Hello) + " " + name?.capitalize() + ","
 //        bind.profilegrade.text= grade
-//
 //        bind.materialLanguage?.text = materialLang
 
 
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        bind.accessCodeIcon.setOnClickListener{
+        bind.AccessCodeHere.setOnClickListener {
             alertbox_accessCode()
+        }
+
+        bind.profileCard.setOnClickListener{
+            alertbox_profile()
         }
 //
 //        bind.materialLanguageTv.setOnClickListener { alertbox_materiallanguage()
@@ -209,8 +204,11 @@ class DashboardFragment : Fragment() {
 //
 //        bind.contactTv.setOnClickListener { open_Contact_dialog() }
 //
-        bind.downloadIcon.setOnClickListener { showDownload() }
+        bind.downloadIcon.setOnClickListener {
+            showDownload()
+        }
 //      //  handle_clicks()
+//        onBackpressed()
 
 
     }
@@ -253,22 +251,40 @@ class DashboardFragment : Fragment() {
 
     }
 
-    fun alertbox_accessCode()
-    {
-       // Toast.makeText(context, "wow", Toast.LENGTH_SHORT).show()
-        val builder = AlertDialog.Builder(context, R.style.CustomAlertDialog)
+    fun alertbox_profile(){
+
+        val builder = AlertDialog.Builder(context, R.style.PauseDialog)
             .create()
-        val view = LayoutInflater.from(context).inflate(R.layout.aceess_code_dialog,null)
+        val view = LayoutInflater.from(context).inflate(R.layout.profile_card, null)
+
+        val button = view.findViewById<Button>(R.id.profile_closebtn)
+        builder.setView(view)
+            button.setOnClickListener {
+            builder.dismiss()
+        }
+
+
+
+        builder.setCanceledOnTouchOutside(false)
+        builder.show()
+
+    }
+
+    fun alertbox_accessCode() {
+
+        val builder = AlertDialog.Builder(context, R.style.PauseDialog)
+            .create()
+        val view = LayoutInflater.from(context).inflate(R.layout.aceess_code_dialog, null)
 
         val et = view.findViewById<EditText>(R.id.code_et)
 
-        val  button = view.findViewById<Button>(R.id.code_return_to_chat)
+        val button = view.findViewById<Button>(R.id.code_return_to_chat)
         builder.setView(view)
         button.setOnClickListener {
-            val intent = Intent(context,HomeActivity::class.java)
+//            val intent = Intent(context, HomeActivity::class.java)
+//            startActivity(intent)
             val code = et.text.trim()
-            if (code.isNotEmpty())
-            {
+            if (code.isNotEmpty()) {
                 Log.d("SettingsFragment", "Access Code: ${code.toString()}")
                 Toast.makeText(context, "access code saved!!!", Toast.LENGTH_SHORT).show()
                 session.savePrivateMaterialsAccessCode(code.toString())
@@ -281,14 +297,13 @@ class DashboardFragment : Fragment() {
         builder.show()
     }
 
-    fun alertbox_language()
-    {
+    fun alertbox_language() {
 
         // Toast.makeText(context, "wow", Toast.LENGTH_SHORT).show()
         val builder = AlertDialog.Builder(context, R.style.CustomAlertDialog)
             .create()
 
-        val view = LayoutInflater.from(context).inflate(R.layout.language_dialog,null)
+        val view = LayoutInflater.from(context).inflate(R.layout.language_dialog, null)
 
         builder.setView(view)
         val btnGerman = view.findViewById<Button>(R.id.btn_german)
@@ -296,33 +311,40 @@ class DashboardFragment : Fragment() {
         btnGerman.text = "Deutsch"
 
 
-        btnGerman.setOnClickListener { Lingver.getInstance().setLocale(this.requireContext(), "de")
+        btnGerman.setOnClickListener {
+            Lingver.getInstance().setLocale(this.requireContext(), "de")
             (context as Activity).recreate()
             builder.dismiss()
         }
 
         val btnSpanish = view.findViewById<Button>(R.id.btn_spanish)
-        btnSpanish.text="Español"
+        btnSpanish.text = "Español"
 
-        btnSpanish.setOnClickListener { Lingver.getInstance().setLocale(this.requireContext(), "es")
+        btnSpanish.setOnClickListener {
+            Lingver.getInstance().setLocale(this.requireContext(), "es")
             (context as Activity).recreate()
-            builder.dismiss()}
+            builder.dismiss()
+        }
 
         val btnGreek = view.findViewById<Button>(R.id.btn_greek)
         btnGreek.text = "ελληνικά"
 
 
-        btnGreek.setOnClickListener { Lingver.getInstance().setLocale(this.requireContext(), "el")
+        btnGreek.setOnClickListener {
+            Lingver.getInstance().setLocale(this.requireContext(), "el")
             (context as Activity).recreate()
-            builder.dismiss()}
+            builder.dismiss()
+        }
 
         val btnEnglish = view.findViewById<Button>(R.id.btn_english)
 
-        btnEnglish.setOnClickListener { Lingver.getInstance().setLocale(this.requireContext(), "en")
+        btnEnglish.setOnClickListener {
+            Lingver.getInstance().setLocale(this.requireContext(), "en")
             (context as Activity).recreate()
-            builder.dismiss()}
+            builder.dismiss()
+        }
 
-        val  button = view.findViewById<Button>(R.id.code_return_to_chat)
+        val button = view.findViewById<Button>(R.id.code_return_to_chat)
 
         button.setOnClickListener {
             val intent = Intent(context, HomeActivity::class.java)
@@ -334,20 +356,19 @@ class DashboardFragment : Fragment() {
         builder.show()
     }
 
-    fun alertbox_materiallanguage()
-    {
+    fun alertbox_materiallanguage() {
         // Toast.makeText(context, "wow", Toast.LENGTH_SHORT).show()
         val builder = AlertDialog.Builder(context, R.style.CustomAlertDialog)
             .create()
 
-        val view = LayoutInflater.from(context).inflate(R.layout.material_language_dialog,null)
+        val view = LayoutInflater.from(context).inflate(R.layout.material_language_dialog, null)
 
         builder.setView(view)
         val btnGerman = view.findViewById<Button>(R.id.btn_german)
 
         btnGerman.setOnClickListener {
             session.save_materialLangPref("German")
-            pref_material_language ="German"
+            pref_material_language = "German"
             UpdateMaterialLang(pref_material_language)
             (context as Activity).recreate()
 
@@ -356,21 +377,23 @@ class DashboardFragment : Fragment() {
 
         val btnSpanish = view.findViewById<Button>(R.id.btn_spanish)
         btnSpanish.setOnClickListener {
-             session.save_materialLangPref("Spanish")
+            session.save_materialLangPref("Spanish")
             pref_material_language = "Spanish"
             UpdateMaterialLang(pref_material_language)
             (context as Activity).recreate()
-           // CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
-            builder.dismiss()}
+            // CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
+            builder.dismiss()
+        }
 
         val btnGreek = view.findViewById<Button>(R.id.btn_greek)
         btnGreek.setOnClickListener {
-           session.save_materialLangPref("Greek").toString()
-            pref_material_language =  "Greek"
+            session.save_materialLangPref("Greek").toString()
+            pref_material_language = "Greek"
             UpdateMaterialLang(pref_material_language)
             (context as Activity).recreate()
-          //  CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
-            builder.dismiss()}
+            //  CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
+            builder.dismiss()
+        }
 
         val btnEnglish = view.findViewById<Button>(R.id.btn_english)
         btnEnglish.setOnClickListener {
@@ -378,15 +401,15 @@ class DashboardFragment : Fragment() {
             pref_material_language = "English"
             UpdateMaterialLang(pref_material_language)
             (context as Activity).recreate()
-          //  CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
-            builder.dismiss()}
+            //  CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
+            builder.dismiss()
+        }
 
 
-
-        val  button = view.findViewById<Button>(R.id.code_return_to_chat)
+        val button = view.findViewById<Button>(R.id.code_return_to_chat)
 
         button.setOnClickListener {
-            val intent = Intent(context,HomeActivity::class.java)
+            val intent = Intent(context, HomeActivity::class.java)
             context?.startActivity(intent)
             (context as Activity).finish()
 
@@ -394,22 +417,48 @@ class DashboardFragment : Fragment() {
         }
         builder.setCanceledOnTouchOutside(false)
         builder.show()
-                         }
+    }
 
 
     private fun UpdateMaterialLang(language: String) {
         val dao: SeedsDao = SeedsDatabase.getInstance(context as Activity).seedsDao
-        lifecycleScope.launch (Dispatchers.IO){
+        lifecycleScope.launch(Dispatchers.IO) {
 
             dao.updatedMaterialLanguage(language, userename.toString())
 
         }
     }
 
-    fun onBackpressed(){
-        findNavController().navigate(R.id.action_dashboardFragment_to_chatFragment2)
-    }
+//    fun onBackpressed(){
+//        val intent = Intent(context, HomeActivity::class.java)
+//        startActivity(intent)
+//    }
 
-    }
+//    fun onBackPressed() {
+//        val count: Int = getSupportFragmentManager().getBackStackEntryCount()
+//        if (count == 0) {
+//            super.onBackPressed()
+//            //additional code
+//        } else {
+//            getSupportFragmentManager().popBackStack()
+//        }
+//    }
+
+//    fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK) {
+//            val intent = Intent(context, HomeActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
+
+//    fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK) {
+//            val intent = Intent(context, HomeActivity::class.java)
+//            startActivity(intent)
+//            return true
+//        }
+//        return true
+//    }
+}
 
 
