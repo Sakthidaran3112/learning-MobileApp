@@ -116,6 +116,9 @@
 
     //Home Activity
     <string name="press_back">Press back again to exit</string>
+    <string name="material_language">Material Language</string>
+    <string name="interface_language">Interface Language</string>
+    <string name="terms_of_use">Terms of use</string>
 
 
     <string-array name="Languages">

@@ -6,6 +6,9 @@
     <string name="Signout">Cerrar sesión</string>
     <string name="Hello">Hola</string>
     <string name="press_back">Vuelve a pulsar atrás para salir</string>
+    <string name="material_language">Material Lengua</string>
+    <string name="interface_language">Lenguaje de interfaz</string>
+    <string name="terms_of_use">Condiciones de uso</string>
     <string name="create_password">Contraseña</string>
     <string name="Register_btn">inscripción</string>
     <string name="username_register">Escriba un nombre de usuario</string>

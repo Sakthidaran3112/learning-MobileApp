@@ -9,6 +9,9 @@
     <string name="Signout">Abmelden</string>
     <string name="Hello">Hallo</string>
     <string name="press_back">Drücken Sie erneut zurück, um den Vorgang zu beenden</string>
+    <string name="material_language">Material Sprache</string>
+    <string name="interface_language">Interface Sprache</string>
+    <string name="terms_of_use">Bedingungen für die Nutzung</string>
     <string name="create_password">Passwort</string>
     <string name="lang_drop_down_text">Sprache auswählen</string>
     <string name="lang_drop_down_label">Sprache</string>

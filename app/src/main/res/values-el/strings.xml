@@ -21,6 +21,9 @@
     <string name="Signout">Υπογράψτε έξω</string>
     <string name="Hello">Γεια σας</string>
     <string name="press_back">Πιέστε ξανά back για έξοδο</string>
+    <string name="material_language">Υλικό Γλώσσα</string>
+    <string name="interface_language">Γλώσσα διεπαφής</string>
+    <string name="terms_of_use">Όροι χρήσης</string>
     <string name="create_password">Επιλέξτε κωδικό</string>
     <string name="Register_btn">Εγγραφή</string>
     <string name="username_register">Πληκτρολογήστε ένα όνομα χρήστη</string>
