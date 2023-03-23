@@ -10,8 +10,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/sender_linear"
-        android:background="@drawable/education_tree"
-        android:alpha="0.1"
         >
 
         <TextView

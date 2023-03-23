@@ -100,11 +100,13 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/ll_layout_bar"
         android:layout_below="@+id/dark_divider"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="-3dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
                 android:textAlignment="viewEnd"
-        tools:itemCount="2"
-        tools:listitem="@layout/message_item" />
+        tools:itemCount="3"
+        tools:listitem="@layout/message_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <View
         android:id="@+id/dark_divider"

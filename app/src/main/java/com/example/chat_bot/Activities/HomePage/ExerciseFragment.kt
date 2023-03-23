@@ -21,6 +21,7 @@ class ExerciseFragment : Fragment() {
     var exerciseList: ArrayList<Exercise> = arrayListOf()
     val adapter = ExerciseHistoryAdapter(this)
     private val TAG = "EXFragment"
+
     private lateinit var binding: FragmentExerciseBinding
     lateinit var session: SessionManager
 

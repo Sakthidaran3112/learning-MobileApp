@@ -7,6 +7,7 @@ import android.transition.Transition
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,9 +35,11 @@ class downloadQuizActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityDownloadQuizBinding.inflate(layoutInflater)
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_download_quiz)
+
+        binding = ActivityDownloadQuizBinding.inflate(layoutInflater)
 
         session = SessionManager(this)
         recyclerView()
@@ -44,6 +47,15 @@ class downloadQuizActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         hideActionBar()
+
+        val backbtn = findViewById<ImageView>(R.id.Backbutton_downloadmaterials)
+
+        backbtn.setOnClickListener{
+            val intent = Intent (this.applicationContext, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -81,21 +93,8 @@ class downloadQuizActivity : AppCompatActivity() {
                 adapter.notifyItemInserted(list.size)
             }
 
-                //Toast.makeText(this.coroutineContext, "No downloads available", Toast.LENGTH_SHORT).show()
-
-
         }
 
-      // list = session.loadQuiz(this) as ArrayList<DowloadedQuiz>
-
-
-
-
-
-
-        //  Log.v(TAG, "ReCYCLE")
-
-        // }
 
     }
 

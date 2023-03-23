@@ -416,84 +416,83 @@ class Register : AppCompatActivity() {
 
 
 
-    private fun dologin() {
-        if (isOnline(applicationContext))
+    private fun dologin() = if (isOnline(applicationContext))
+    {
+        user_name = binding.usernameEt.text.toString().trim()
+        user_age = binding.ageBtn.text.toString().trim()
+        user_language = binding.langBtnn.text.toString().trim()
+        user_grade = binding.classBtn.text.toString().trim()
+        materialLang = binding.materiallangBtn.text.toString().trim()
+
+        user_country = "Germany"
+
+        user_grade
+
+
+        val user = Userz(user_name, user_age,  user_country,  user_grade, user_language, m_androidId.toString())
+
+        val user1 = User(user_name, user_age,  user_country,  user_grade, user_language, m_androidId.toString(), materialLang)
+
+
+        if (binding.usernameEt.text == null || user_name == "")
         {
-            user_name = binding.usernameEt.text.toString().trim()
-            user_age = binding.ageBtn.text.toString().trim()
-            user_language = binding.langBtnn.text.toString().trim()
-            user_grade = binding.classBtn.text.toString().trim()
-            materialLang = binding.materiallangBtn.text.toString().trim()
-
-            user_country = "Germany"
-
-            user_grade
-
-
-            val user = Userz(user_name, user_age,  user_country,  user_grade, user_language, m_androidId.toString())
-
-            val user1 = User(user_name, user_age,  user_country,  user_grade, user_language, m_androidId.toString(), materialLang)
-
-
-            if (binding.usernameEt.text == null || user_name == "")
-            {
-                Toast.makeText(applicationContext, "Username required", Toast.LENGTH_SHORT).show()
-            }
-            else if (binding.ageBtn.text == null || user_age == "")
-            {
-                Toast.makeText(applicationContext, "age required", Toast.LENGTH_SHORT).show()
-            }
-            else if (binding.classBtn.text == null || user_grade == "")
-            {
-                Toast.makeText(applicationContext, "grade required", Toast.LENGTH_SHORT).show()
-            }
-            else if (binding.langBtnn.text == null || user_language == "")
-            {
-                Toast.makeText(applicationContext, "language required", Toast.LENGTH_SHORT).show()
-            }
-            else
-            {
-
-                viewModel.create_user(user)
-                viewModel.myresponse.observe(this, Observer {  response->
-
-
-                    if (response.code() == 400 )
-                    {
-                        Toast.makeText(this, "That user already exists!", Toast.LENGTH_SHORT).show()
-                        //viewModel.myresponse.postValue(null)
-                    }
-                    if (response.code() == 500 )
-                    {
-                        Toast.makeText(this, "Please fill correct data!!", Toast.LENGTH_SHORT).show()
-                        //viewModel.myresponse.postValue(null)
-                    }
-
-
-                    else if (response.body()!= null)
-                    {
-                        session.createLoginSession(user_name, m_androidId.toString())
-                        session.save_details(user_name, user_age, user_grade, materialLang)
-                        saveInfoToLocalDB(user1)
-                        val intent = Intent(this, Login::class.java)
-                            .setAction(Intent.ACTION_VIEW)
-                            .setData(Uri.parse("success"))
-                        startActivity(intent)
-                        finish()
-                    }
-
-                    response.code()
-                    response.body()
-                })
-            }
-
+            Toast.makeText(applicationContext, "Username required", Toast.LENGTH_SHORT).show()
         }
-
+        else if (binding.ageBtn.text == null || user_age == "")
+        {
+            Toast.makeText(applicationContext, "Age required", Toast.LENGTH_SHORT).show()
+        }
+        else if (binding.classBtn.text == null || user_grade == "")
+        {
+            Toast.makeText(applicationContext, "Grade required", Toast.LENGTH_SHORT).show()
+        }
+        else if (binding.materiallangBtn.text == null || user_language == "")
+        {
+            Toast.makeText(applicationContext, "Material Language required", Toast.LENGTH_SHORT).show()
+        }
         else
         {
-            checkInternet()
+
+            viewModel.create_user(user)
+            viewModel.myresponse.observe(this, Observer {  response->
+
+
+                if (response.code() == 400 )
+                {
+                    Toast.makeText(this, "User already exist!", Toast.LENGTH_SHORT).show()
+
+
+                }
+                if (response.code() == 500 )
+                {
+                    Toast.makeText(this, "The Username must contain atleast 5 letters", Toast.LENGTH_SHORT).show()
+                    //viewModel.myresponse.postValue(null)
+                }
+
+
+                else if (response.body()!= null)
+                {
+                    session.createLoginSession(user_name, m_androidId.toString())
+                    session.save_details(user_name, user_age, user_grade, materialLang)
+                    saveInfoToLocalDB(user1)
+                    val intent = Intent(this, Login::class.java)
+                        .setAction(Intent.ACTION_VIEW)
+                        .setData(Uri.parse("success"))
+                    startActivity(intent)
+                    finish()
+                }
+
+                response.code()
+                response.body()
+            })
         }
-        }
+
+    }
+
+    else
+    {
+        checkInternet()
+    }
 
     private fun saveInfoToLocalDB(user: User) {
         val dao: SeedsDao = SeedsDatabase.getInstance(this).seedsDao

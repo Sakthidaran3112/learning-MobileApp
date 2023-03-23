@@ -33,6 +33,7 @@
     <color name="profile">#FECBF9FF</color>
     <color name="type_a_message_colour">#212121</color>
     <color name="message_send_box_colour">#C1D1E0</color>
+    <color name="mild_black">#1F1F1F</color>
 
 
 </resources>

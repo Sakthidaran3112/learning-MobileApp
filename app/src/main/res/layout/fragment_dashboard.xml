@@ -21,18 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/Dasboard_background"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="32dp"
-            android:alpha="0.1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/app_backgroung_tranparent" />
     </LinearLayout>
 
     <TextView
@@ -44,7 +32,7 @@
         android:textStyle="italic"
         android:text="@string/Username"
         android:textFontWeight="@integer/material_motion_duration_long_1"
-        android:textColor="#3F5AE7"
+        android:textColor="#0BA0E5"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,7 +46,7 @@
         android:layout_gravity="center"
         android:padding="15dp"
         android:text="@string/settings_powerd_by"
-        android:textColor="#ACF7F7"
+        android:textColor="#BDFDFD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -165,18 +153,18 @@
                         android:orientation="vertical"
                         android:background="@drawable/background_learningprogress">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/backgroundImage"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="35dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/statistics_icon"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/backgroundImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="35dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/statistics_icon" />
                     </LinearLayout>
 
                     <TextView
@@ -268,6 +256,19 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/download" />
 
+                        <ImageView
+                            android:id="@+id/Dasboard_background"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="32dp"
+                            android:alpha="0.1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/app_backgroung_tranparent" />
+
                     </LinearLayout>
 
                     <TextView
@@ -340,6 +341,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/Settings_cardview"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:layout_margin="10dp"
