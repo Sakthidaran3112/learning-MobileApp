@@ -16,6 +16,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.compose.ui.text.capitalize
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.chat_bot.Activities.HomePage.HomeActivity
@@ -204,7 +205,7 @@ class DashboardFragment : Fragment() {
         val profileusername = view.findViewById<TextView>(R.id.profilecardUsername)
 
 
-        profileusername.text = name
+        profileusername.text = name?.capitalize()
         profilemateriallang.text = materialLang
         profileuserage.text = age
         profilegrade.text = grade
