@@ -77,7 +77,7 @@
     <string name="your_score">Your score:</string>
     <string name="Setting_Contact_us_dialog_title">Contact team</string>
     <string name="close">Close</string>
-    <string name="contact_team_text">You can contact us using our email: seeds.members@listserv.dfn.de</string>
+    <string name="contact_team_text">You can contact our support team using the mail ID</string>
     <string name="GET_STARTED">GET STARTED</string>
     <string name="Already_User">ALREADY USER</string>
     <string name="what_is_seeds">What is SEEDS?</string>
@@ -119,6 +119,8 @@
     <string name="material_language">Material Language</string>
     <string name="interface_language">Interface Language</string>
     <string name="terms_of_use">Terms of use</string>
+    <string name="feedback">Feedback</string>
+    <string name="contact_us">Contact us</string>
 
 
     <string-array name="Languages">

@@ -1,26 +1,16 @@
 package com.example.chat_bot.Activities
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
+//import com.example.chat_bot.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
-import android.view.inputmethod.InputMethodManager
-import androidx.core.app.ActivityCompat
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chat_bot.Activities.HomePage.ChatFragment
-//import com.example.chat_bot.Manifest
 import com.example.chat_bot.R
-import com.example.chat_bot.Rasa.rasaMsg.BotResponse
 import com.example.chat_bot.data.Message
 import com.example.chat_bot.data.Topics
 import com.example.chat_bot.data.msgAdapter
@@ -56,8 +46,9 @@ class MainActivity : AppCompatActivity(), msgAdapter.Callbackinter{
 
         Log.v(TAG, "In main")
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
-        navHostFragment.findNavController()
+
+
+
 
     }
 

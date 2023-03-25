@@ -18,9 +18,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.compose.ui.text.capitalize
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import com.example.chat_bot.Activities.HomePage.ChatFragment
 import com.example.chat_bot.Activities.HomePage.HomeActivity
 import com.example.chat_bot.Activities.Welcomepage.WelcomePage
+import com.example.chat_bot.Activities.acivity.Help
 import com.example.chat_bot.Activities.acivity.downloadQuizActivity
 import com.example.chat_bot.Activities.acivity.quiz_home
 import com.example.chat_bot.R
@@ -107,12 +112,16 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        bind.AccessCodeHere.setOnClickListener {
-            alertbox_accessCode()
+        bind.ProfileCardview.setOnClickListener {
+            alertbox_profile()
         }
 
-        bind.profileCard.setOnClickListener {
-            alertbox_profile()
+        bind.DownloadCardview.setOnClickListener {
+            showDownload()
+        }
+
+        bind.AccessCodeHere.setOnClickListener {
+            alertbox_accessCode()
         }
 
         bind.SettingsCardview.setOnClickListener {
@@ -121,17 +130,21 @@ class DashboardFragment : Fragment() {
             startActivity(intent)
         }
 
+        bind.HelpCardview.setOnClickListener {
+            val intent =
+                Intent(this.context, Help::class.java)
+            startActivity(intent)
+        }
+
+
 //        bind.complexTV.setOnClickListener {  loadHome()}
 //
 //        bind.contactTv.setOnClickListener { open_Contact_dialog() }
 //
-        bind.downloadIcon.setOnClickListener {
-            showDownload()
-        }
-//      //  handle_clicks()
-//        onBackPressed()
 
+//      //  handle_clicks(
 
+            findNavController().popBackStack()
     }
 
     private fun open_Contact_dialog() {
@@ -245,86 +258,6 @@ class DashboardFragment : Fragment() {
     }
 
 
-
-    fun alertbox_materiallanguage() {
-        // Toast.makeText(context, "wow", Toast.LENGTH_SHORT).show()
-        val builder = AlertDialog.Builder(context, R.style.CustomAlertDialog)
-            .create()
-
-        val view = LayoutInflater.from(context).inflate(R.layout.material_language_dialog, null)
-
-        builder.setView(view)
-        val btnGerman = view.findViewById<Button>(R.id.btn_german)
-
-        btnGerman.setOnClickListener {
-            session.save_materialLangPref("German")
-            pref_material_language = "German"
-            UpdateMaterialLang(pref_material_language)
-            (context as Activity).recreate()
-
-            builder.dismiss()
-        }
-
-        val btnSpanish = view.findViewById<Button>(R.id.btn_spanish)
-        btnSpanish.setOnClickListener {
-            session.save_materialLangPref("Spanish")
-            pref_material_language = "Spanish"
-            UpdateMaterialLang(pref_material_language)
-            (context as Activity).recreate()
-            // CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
-            builder.dismiss()
-        }
-
-        val btnGreek = view.findViewById<Button>(R.id.btn_greek)
-        btnGreek.setOnClickListener {
-            session.save_materialLangPref("Greek").toString()
-            pref_material_language = "Greek"
-            UpdateMaterialLang(pref_material_language)
-            (context as Activity).recreate()
-            //  CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
-            builder.dismiss()
-        }
-
-        val btnEnglish = view.findViewById<Button>(R.id.btn_english)
-        btnEnglish.setOnClickListener {
-            session.save_materialLangPref("English")
-            pref_material_language = "English"
-            UpdateMaterialLang(pref_material_language)
-            (context as Activity).recreate()
-            //  CoroutineScope(Dispatchers.IO).launch { UpdateMaterialLang() }
-            builder.dismiss()
-        }
-
-
-        val button = view.findViewById<Button>(R.id.code_return_to_chat)
-
-        button.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            context?.startActivity(intent)
-            (context as Activity).finish()
-
-
-        }
-        builder.setCanceledOnTouchOutside(false)
-        builder.show()
-    }
-
-
-    private fun UpdateMaterialLang(language: String) {
-        val dao: SeedsDao = SeedsDatabase.getInstance(context as Activity).seedsDao
-        lifecycleScope.launch(Dispatchers.IO) {
-
-            dao.updatedMaterialLanguage(language, userename.toString())
-
-        }
-    }
-
-
-
-
-
-
-
 //    fun onBackpressed(){
 //        val intent = Intent(context, HomeActivity::class.java)
 //        startActivity(intent)
@@ -340,10 +273,11 @@ class DashboardFragment : Fragment() {
 //        }
 //    }
 
-//    fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+//    fun onKeyDown(keyCode: Int, event: KeyEvent?) {
 //        if (keyCode == KeyEvent.KEYCODE_BACK) {
-//            val intent = Intent(context, HomeActivity::class.java)
-//            startActivity(intent)
+//            val navHostFragment = fragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//            val navController = navHostFragment.navController
+//            navController.navigate(R.id.chatFragment)
 //        }
 //    }
 
@@ -367,6 +301,10 @@ class DashboardFragment : Fragment() {
 //            childFragmentManager.popBackStack()
 //        }
 //    }
+
+
 }
+
+
 
 

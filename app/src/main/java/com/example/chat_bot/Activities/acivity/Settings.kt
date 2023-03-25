@@ -38,9 +38,9 @@ class Settings : AppCompatActivity() {
             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
 
-        val interfacelang = findViewById<ImageView>(R.id.open_Interface_language_dialog)
+        val interfacelanguage = findViewById<ImageView>(R.id.open_Interface_language_dialog)
 
-            interfacelang.setOnClickListener{
+            interfacelanguage.setOnClickListener{
                 alertbox_language()
         }
 

@@ -6,7 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".Activities.HomePage.HomeActivity">
 
-<FrameLayout
+<!--    <FrameLayout-->
+<!--        android:id="@+id/nav_host_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tabslayout">-->
+
+<!--        <fragment-->
+<!--            android:id="@+id/nav_host_fragment"-->
+<!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:navGraph="@navigation/navgraph" />-->
+
+<!--    </FrameLayout>-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navgraph" />
+
+    </LinearLayout>
+
+    <FrameLayout
     android:id="@+id/frame_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
@@ -26,6 +59,7 @@
         app:tabSelectedTextColor="@color/white"
         app:tabTextAppearance="@style/MineCustomTabText"
         app:tabTextColor="@color/seed_dark_blue" />
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"

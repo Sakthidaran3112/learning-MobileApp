@@ -411,6 +411,7 @@ class ChatFragment : Fragment(), msgAdapter.Callbackinter, quiz_adapter.Callback
         Log.v(TAG, "In main")
 
 
+
     }
 
     override fun submitAnswerCallback(openEnded: com.example.chat_bot.data.OpenEnded) {

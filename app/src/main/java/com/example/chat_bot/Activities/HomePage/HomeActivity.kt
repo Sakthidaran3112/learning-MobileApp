@@ -1,8 +1,13 @@
 package com.example.chat_bot.Activities.HomePage
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.chat_bot.R
 import com.example.chat_bot.databinding.ActivityHomeBinding
@@ -20,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
     val fragmentManager = supportFragmentManager
     private var backPressedTime: Long = 0
     private var backToast: Toast? = null
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(android.R.style.Theme_Light_NoTitleBar_Fullscreen)
@@ -54,6 +60,7 @@ class HomeActivity : AppCompatActivity() {
         } else {
             backToast = Toast.makeText(baseContext, getString(R.string.press_back), Toast.LENGTH_SHORT)
             backToast?.show()
+
         }
         backPressedTime = System.currentTimeMillis()
     }
@@ -69,4 +76,5 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-}
+    }
+
