@@ -114,8 +114,9 @@ class DashboardFragment : Fragment() {
         }
 
         bind.HelpCardview.setOnClickListener {
-            val intent =
-                Intent(this.context, Help::class.java)
+            val intent = Intent(this.context, Help::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            }
             startActivity(intent)
         }
 

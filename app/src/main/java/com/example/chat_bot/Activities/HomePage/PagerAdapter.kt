@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.chat_bot.Ac.DashboardFragment
 
-class PagerAdapter(fragmentAtctivity: FragmentActivity) : FragmentStateAdapter(fragmentAtctivity) {
+class PagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount() = 3
 
 

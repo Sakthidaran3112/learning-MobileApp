@@ -3,11 +3,18 @@ import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.MenuItem
 import android.widget.Adapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.chat_bot.Ac.DashboardFragment
@@ -26,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var session: SessionManager
     private var backPressedTime: Long = 0
     private var backToast: Toast? = null
-    private lateinit var navController: NavController
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,23 +44,20 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         tabLayout = binding.tabslayout
         viewPager2 = binding.viewpager
         viewPager2.adapter = PagerAdapter(this)
+
         TabLayoutMediator(tabLayout, viewPager2) { tab, index ->
             tab.text = when (index) {
-                0 -> {
-                    "Chat"
-                }
+                0 -> "Chat"
                 1 -> applicationContext.resources.getString(R.string.mainpage_ex_heading)
                 2 -> applicationContext.resources.getString(R.string.mainpage_Dashboard_heading)
-                else -> {
-                    throw Resources.NotFoundException("Position Not Found!!")
-                }
+                else -> throw Resources.NotFoundException("Position Not Found!!")
             }
-
         }.attach()
+
+
 
     }
 
@@ -72,6 +76,9 @@ class HomeActivity : AppCompatActivity() {
             viewPager2.setCurrentItem(0, true)
         }
     }
+
+
+
 }
 
 
