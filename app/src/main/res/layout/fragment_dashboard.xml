@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
    android:background="@drawable/dashboard_layout"
     tools:context=".Activities.HomePage.HomeActivity"
+    android:id = "@+id/dashboard_container"
     >
 
 

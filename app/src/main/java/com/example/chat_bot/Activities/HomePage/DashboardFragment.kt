@@ -3,12 +3,10 @@ package com.example.chat_bot.Ac
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,28 +14,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.compose.ui.text.capitalize
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import com.example.chat_bot.Activities.HomePage.ChatFragment
-import com.example.chat_bot.Activities.HomePage.HomeActivity
-import com.example.chat_bot.Activities.Welcomepage.WelcomePage
 import com.example.chat_bot.Activities.acivity.Help
 import com.example.chat_bot.Activities.acivity.downloadQuizActivity
 import com.example.chat_bot.Activities.acivity.quiz_home
 import com.example.chat_bot.R
-import com.example.chat_bot.Room.Dao.SeedsDao
-import com.example.chat_bot.Room.SeedsDatabase
 import com.example.chat_bot.databinding.FragmentDashboardBinding
 import com.example.chat_bot.utils.AppMode
 import com.example.chat_bot.utils.Language
 import com.example.chat_bot.utils.SessionManager
-import com.yariksoffice.lingver.Lingver
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.util.*
 
 
@@ -66,10 +51,8 @@ class DashboardFragment : Fragment() {
 
         bind = FragmentDashboardBinding.inflate(layoutInflater, container, false)
 
-//        bind.materialLanguage.visibility = View.VISIBLE
         showUserProfile()
-//
-//
+
         bind.signoutTv.setOnClickListener { handleClicks() }
 
 
@@ -138,29 +121,10 @@ class DashboardFragment : Fragment() {
 
 
 //        bind.complexTV.setOnClickListener {  loadHome()}
-//
-//        bind.contactTv.setOnClickListener { open_Contact_dialog() }
-//
 
-//      //  handle_clicks(
 
-            findNavController().popBackStack()
-    }
 
-    private fun open_Contact_dialog() {
-        val builder = AlertDialog.Builder(context, R.style.CustomAlertDialog)
-            .create()
 
-        val view = LayoutInflater.from(context).inflate(R.layout.contact_us_dialog, null)
-
-        builder.setView(view)
-        val btnclose = view.findViewById<Button>(R.id.close_contact_dialog)
-
-        btnclose.setOnClickListener {
-
-            builder.dismiss()
-        }
-        builder.show()
     }
 
     private fun showDownload() {
@@ -301,7 +265,6 @@ class DashboardFragment : Fragment() {
 //            childFragmentManager.popBackStack()
 //        }
 //    }
-
 
 }
 
